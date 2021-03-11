@@ -214,6 +214,10 @@ void send_string(char* s){
 	HAL_UART_Transmit(&uart, (uint8_t*)s, strlen(s), 1000);
 }
 
+/*void receive_string(char* s){
+	HAL_UART_Receive(&uart, (uint8_t*)s, strlen(s), 1000);
+}*/
+
 int main(void)
 {
 
@@ -261,15 +265,7 @@ int main(void)
 				HAL_UART_Receive(&uart, &value[i], 1, 100);
 			}
 
-			switch(value){
-
-			case 'a':
-				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
-				break;
-			case 'b':
-				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
-				break;
-			}
+			//send_string(value);
 
 		}
 	}

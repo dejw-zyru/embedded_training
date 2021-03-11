@@ -8,9 +8,28 @@
   ******************************************************************************
 */
 
-
+#include <string.h>
 #include "stm32f1xx.h"
+
+UART_HandleTypeDef uart;
+ADC_HandleTypeDef adc;
 			
+void GPIO_INIT(void);
+void UART_INIT(void);
+void ADC_INIT(void);
+
+void send_char(char c)
+{
+	HAL_UART_Transmit(&uart, (uint8_t*)&c, 1, 1000);
+}
+
+int __io_putchar(int ch)
+{
+	if (ch == '\n')
+		send_char('\r');
+	send_char(ch);
+	return ch;
+}
 
 int main(void)
 {
@@ -18,21 +37,110 @@ int main(void)
 	SystemCoreClock = 8000000; //taktowanie8MHz
 	HAL_Init();
 
+	__HAL_RCC_GPIOA_CLK_ENABLE();
 	__HAL_RCC_GPIOC_CLK_ENABLE();
 	__HAL_RCC_GPIOB_CLK_ENABLE();
+	//enable usart
+	__HAL_RCC_USART2_CLK_ENABLE();
+	//enable ADC1
+	__HAL_RCC_ADC1_CLK_ENABLE();
 
+	GPIO_INIT();
+	UART_INIT();
+	ADC_INIT();
+
+
+
+	int i = 0;
+
+	while(1){
+		HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_13); // green led
+		HAL_Delay(2000);
+		HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_6);	// red led*/
+		printf("Hello world!%d\n",i);
+
+		uint32_t value = HAL_ADC_GetValue(&adc);
+		printf("Adc = %ld (%.3eV)\r\n", value, value * 3.3f / 4096.0f);
+
+		HAL_Delay(1000);
+		i++;
+		}
+
+
+}
+
+
+
+void GPIO_INIT(void){
 	GPIO_InitTypeDef gpio; 				//obiekt gpio bedacy konfiguracja portow GPIO
-	gpio.Pin = GPIO_PIN_6; 				// konfigurowany pin 5
+	gpio.Pin = GPIO_PIN_13; 			// green led output
+	gpio.Mode = GPIO_MODE_OUTPUT_PP; 	// jako wyjscie
+	gpio.Pull = GPIO_NOPULL;			// rezystory podciagajace sa wylaczone
+	gpio.Speed = GPIO_SPEED_FREQ_LOW;	// wystarcza niskie czestotliwosci przelaczania
+	HAL_GPIO_Init(GPIOB, &gpio); 		// inicjalizacja modulow GPIOA
+
+	gpio.Mode = GPIO_MODE_ANALOG;
+	gpio.Pin = GPIO_PIN_0;
+	HAL_GPIO_Init(GPIOB, &gpio);
+
+
+	gpio.Pin = GPIO_PIN_6; 				// red led output
 	gpio.Mode = GPIO_MODE_OUTPUT_PP; 	// jako wyjscie
 	gpio.Pull = GPIO_NOPULL;			// rezystory podciagajace sa wylaczone
 	gpio.Speed = GPIO_SPEED_FREQ_LOW;	// wystarcza niskie czestotliwosci przelaczania
 	HAL_GPIO_Init(GPIOC, &gpio); 		// inicjalizacja modulow GPIOA
 
-	while(1){
-		HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_6); // zmiana stanu diody
-		HAL_Delay(2000);
 
-	}
 
+	gpio.Mode = GPIO_MODE_AF_PP;	//alternatywna push-pull
+	gpio.Pin = GPIO_PIN_2;			//TX
+	gpio.Pull = GPIO_NOPULL;
+	gpio.Speed = GPIO_SPEED_FREQ_LOW;
+	HAL_GPIO_Init(GPIOA, &gpio);
+
+	gpio.Mode = GPIO_MODE_AF_INPUT;	//alternatywne wejscie
+	gpio.Pin = GPIO_PIN_3;			//RX
+	HAL_GPIO_Init(GPIOA, &gpio);
 }
 
+void UART_INIT(void){
+	uart.Instance = USART2;
+	uart.Init.BaudRate = 115200;
+	uart.Init.WordLength = UART_WORDLENGTH_8B;
+	uart.Init.Parity = UART_PARITY_NONE;
+	uart.Init.StopBits = UART_STOPBITS_1;
+	uart.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+	uart.Init.OverSampling = UART_OVERSAMPLING_16;
+	uart.Init.Mode = UART_MODE_TX_RX;
+	HAL_UART_Init(&uart);
+}
+
+void ADC_INIT(void){
+	//konfiguraca petli PLL
+	RCC_PeriphCLKInitTypeDef adc_clk;
+	adc_clk.PeriphClockSelection = RCC_PERIPHCLK_ADC;
+	adc_clk.AdcClockSelection = RCC_ADCPCLK2_DIV2;//najmniejszy dzielnik 2
+	HAL_RCCEx_PeriphCLKConfig(&adc_clk);
+
+	//usatwienie zmiennej + parametry pracy
+	adc.Instance = ADC1;
+	adc.Init.ContinuousConvMode = ENABLE;
+	adc.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+	adc.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+	adc.Init.ScanConvMode = ADC_SCAN_DISABLE;
+	adc.Init.NbrOfConversion = 1;
+	adc.Init.DiscontinuousConvMode = DISABLE;
+	adc.Init.NbrOfDiscConversion = 1;
+	HAL_ADC_Init(&adc);
+
+	//start kalibracji
+	HAL_ADCEx_Calibration_Start(&adc);
+
+	// ustawienie parametrow multipleksera
+	ADC_ChannelConfTypeDef adc_ch;
+	adc_ch.Channel = ADC_CHANNEL_8;
+	adc_ch.Rank = ADC_REGULAR_RANK_1;
+	adc_ch.SamplingTime = ADC_SAMPLETIME_13CYCLES_5;
+	HAL_ADC_ConfigChannel(&adc, &adc_ch);
+	HAL_ADC_Start(&adc);
+}
