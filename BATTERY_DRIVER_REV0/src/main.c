@@ -16,6 +16,11 @@
 #define PMOS_LOGIC 		GPIO_PIN_1
 #define PMOS_DCDC 		GPIO_PIN_5
 #define PMOS_STEP 		GPIO_PIN_2
+#define ADC_CHANNELS	3
+
+uint16_t adc_value[ADC_CHANNELS];
+
+DMA_HandleTypeDef dma;
 
 UART_HandleTypeDef uart;
 ADC_HandleTypeDef adc;
@@ -24,7 +29,6 @@ TIM_HandleTypeDef tim2;
 void GPIO_INIT(void);
 void UART_INIT(void);
 void ADC_INIT(void);
-int adc_read(uint32_t channel);
 
 void send_char(char c)
 {
@@ -47,9 +51,7 @@ void TIM2_IRQHandler(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	HAL_GPIO_TogglePin(GPIOB, GREEN_LED); // toggle green led
-	//HAL_Delay(2000);
 	HAL_GPIO_TogglePin(GPIOC, RED_LED);	// red led*/
-
 }
 
 int main(void)
@@ -67,13 +69,15 @@ int main(void)
 	__HAL_RCC_ADC1_CLK_ENABLE();
 	//clock tim2
 	__HAL_RCC_TIM2_CLK_ENABLE();
+	//DMA clock enable
+	__HAL_RCC_DMA1_CLK_ENABLE();
 
 	GPIO_INIT();
 	UART_INIT();
 	ADC_INIT();
 
 	tim2.Instance = TIM2;
-	tim2.Init.Period = 1000 - 1;
+	tim2.Init.Period = 5000 - 1;
 	tim2.Init.Prescaler = 8000 - 1;
 	tim2.Init.ClockDivision = 0;
 	tim2.Init.CounterMode = TIM_COUNTERMODE_UP;
@@ -84,7 +88,18 @@ int main(void)
 	HAL_NVIC_EnableIRQ(TIM2_IRQn);
 	HAL_TIM_Base_Start_IT(&tim2);
 
+	dma.Instance = DMA1_Channel1;				//kana³ pierwszy DMA
+	dma.Init.Direction = DMA_PERIPH_TO_MEMORY;	//kopiowanie z ukladu peryferyjnego do pamieci
+	dma.Init.PeriphInc = DMA_PINC_DISABLE;		//adres rejestru przetwornika staly??
+	dma.Init.MemInc = DMA_MINC_ENABLE;			//zapisywanie wynikow w kolejnych zmiennych
+	dma.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;	//16 bitowe zmienne do odczytywania 12 bitowego wyniku
+	dma.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
+	dma.Init.Mode = DMA_CIRCULAR;				//odczyt ma nastepowac ciagle
+	dma.Init.Priority = DMA_PRIORITY_HIGH;		//ustawienie wyskiego priorytetu
+	HAL_DMA_Init(&dma);							//inicjalizacja DMA
+	__HAL_LINKDMA(&adc, DMA_Handle, dma);		//makro powiazujace kanal DMA z modulem ADC
 
+	HAL_ADC_Start_DMA(&adc, (uint32_t*)adc_value, ADC_CHANNELS);
 
 	int i = 0;
 
@@ -94,16 +109,15 @@ int main(void)
 		HAL_GPIO_TogglePin(GPIOC, RED_LED);	// red led*/
 		printf("Hello world!%d\n",i);
 
-		uint32_t value = adc_read(ADC_CHANNEL_8);
-		printf("STM32 supply voltage is = %ld (%.1eV)\r\n", value, 2 * value * 3.3f / 4096.0f);
 
-		value = adc_read(ADC_CHANNEL_0);
-		printf("Input voltage is = %ld (%.1eV)\r\n", value, 10 * value * 3.3f / 4096.0f);
+		printf("\n\n\nSTM32 supply voltage is = %d convert: (%.1eV)\r\n", adc_value[0], 2 * adc_value[0] * 3.3f / 4096.0f);
 
-		value = adc_read(ADC_CHANNEL_1);
-		printf("Reference voltage is = %ld (%.1eV)\r\n", value,  value * 3.3f / 4096.0f);
 
-		HAL_Delay(1000);
+		printf("Input voltage is = %d convert:(%.1eV)\r\n", adc_value[1], 10 * adc_value[1] * 3.3f / 4096.0f);
+
+
+		printf("Reference voltage is = %d convert:(%.1eV)\r\n\n\n\n", adc_value[2],  adc_value[2] * 3.3f / 4096.0f);
+		HAL_Delay(2000);
 		i++;
 
 
@@ -170,6 +184,7 @@ void UART_INIT(void){
 
 void ADC_INIT(void){
 	//konfiguraca petli PLL
+	// przetwornik nie moze pracowac powyzej 14MHz
 	RCC_PeriphCLKInitTypeDef adc_clk;
 	adc_clk.PeriphClockSelection = RCC_PERIPHCLK_ADC;
 	adc_clk.AdcClockSelection = RCC_ADCPCLK2_DIV2;//najmniejszy dzielnik 2
@@ -177,36 +192,34 @@ void ADC_INIT(void){
 
 	//usatwienie zmiennej + parametry pracy
 	adc.Instance = ADC1;
-	adc.Init.ContinuousConvMode = DISABLE;
+	adc.Init.ContinuousConvMode = ENABLE;			//chcemy caly czas odczytywac pomiarow
 	adc.Init.ExternalTrigConv = ADC_SOFTWARE_START;
 	adc.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-	adc.Init.ScanConvMode = ADC_SCAN_DISABLE;
-	adc.Init.NbrOfConversion = 1;
+	adc.Init.ScanConvMode = ADC_SCAN_ENABLE;		//wiele kanalow odczytujemy
+	adc.Init.NbrOfConversion = ADC_CHANNELS;		//liczba kana³ow
 	adc.Init.DiscontinuousConvMode = DISABLE;
 	adc.Init.NbrOfDiscConversion = 1;
-	HAL_ADC_Init(&adc);
+	HAL_ADC_Init(&adc);							//wlaczenie przetwornika
+
+
+
+	// konfigorowanie kana³ow przetwornika
+	ADC_ChannelConfTypeDef adc_ch;
+	adc_ch.Channel = ADC_CHANNEL_8;				//STM32 supply voltage
+	adc_ch.Rank = ADC_REGULAR_RANK_1;			// pole Rank ustala kolejnosc wykonywania pomairow
+	adc_ch.SamplingTime = ADC_SAMPLETIME_239CYCLES_5;
+	HAL_ADC_ConfigChannel(&adc, &adc_ch);
+
+	adc_ch.Channel = ADC_CHANNEL_0;				//Input voltage is
+	adc_ch.Rank = ADC_REGULAR_RANK_2;
+	HAL_ADC_ConfigChannel(&adc, &adc_ch);
+
+	adc_ch.Channel = ADC_CHANNEL_1;				//Input voltage is
+	adc_ch.Rank = ADC_REGULAR_RANK_3;
+	HAL_ADC_ConfigChannel(&adc, &adc_ch);
 
 	//start kalibracji
-	HAL_ADCEx_Calibration_Start(&adc);
-
-	// ustawienie parametrow multipleksera
-	ADC_ChannelConfTypeDef adc_ch;
-	adc_ch.Channel = ADC_CHANNEL_8;
-	adc_ch.Rank = ADC_REGULAR_RANK_1;
-	adc_ch.SamplingTime = ADC_SAMPLETIME_13CYCLES_5;
-	HAL_ADC_ConfigChannel(&adc, &adc_ch);
-	HAL_ADC_Start(&adc);
+	HAL_ADCEx_Calibration_Start(&adc);			//autokalibracaj przetwornika
 }
 
-int adc_read(uint32_t channel)
-{
-	ADC_ChannelConfTypeDef adc_ch;
-	adc_ch.Channel = channel;
-	adc_ch.Rank = ADC_REGULAR_RANK_1;
-	adc_ch.SamplingTime = ADC_SAMPLETIME_13CYCLES_5;
-	HAL_ADC_ConfigChannel(&adc, &adc_ch);
 
-	HAL_ADC_Start(&adc);
-	HAL_ADC_PollForConversion(&adc, 1000);
-    return HAL_ADC_GetValue(&adc);
-}
