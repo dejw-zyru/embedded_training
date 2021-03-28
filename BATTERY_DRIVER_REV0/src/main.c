@@ -11,12 +11,15 @@
 #include <string.h>
 #include "stm32f1xx.h"
 
+#define CTRL_DC_DC 		GPIO_PIN_9
 #define GREEN_LED 		GPIO_PIN_13
 #define RED_LED 		GPIO_PIN_6
 #define PMOS_LOGIC 		GPIO_PIN_1
 #define PMOS_DCDC 		GPIO_PIN_5
 #define PMOS_STEP 		GPIO_PIN_2
 #define ADC_CHANNELS	3
+
+#define	BUTTON_SYSTEM_START_OFF
 
 uint16_t adc_value[ADC_CHANNELS];
 
@@ -25,10 +28,14 @@ DMA_HandleTypeDef dma;
 UART_HandleTypeDef uart;
 ADC_HandleTypeDef adc;
 TIM_HandleTypeDef tim2;
+GPIO_InitTypeDef gpio;
 			
 void GPIO_INIT(void);
 void UART_INIT(void);
 void ADC_INIT(void);
+#ifdef BUTTON_SYSTEM_START_ON
+	void system_start(void);
+#endif
 
 void send_char(char c)
 {
@@ -72,6 +79,10 @@ int main(void)
 	//DMA clock enable
 	__HAL_RCC_DMA1_CLK_ENABLE();
 
+	//start przetwornicy
+	#ifdef BUTTON_SYSTEM_START_ON
+		system_start();
+	#endif
 	GPIO_INIT();
 	UART_INIT();
 	ADC_INIT();
@@ -129,11 +140,21 @@ int main(void)
 
 
 }
-
+#ifdef BUTTON_SYSTEM_START_ON
+	void system_start(void){
+		//start prztwornicy
+		gpio.Pin = CTRL_DC_DC;
+		gpio.Mode = GPIO_MODE_OUTPUT_PP;
+		gpio.Pull = GPIO_NOPULL;
+		gpio.Speed = GPIO_SPEED_FREQ_LOW;
+		HAL_GPIO_Init(GPIOC, &gpio);
+		HAL_GPIO_WritePin(GPIOC, CTRL_DC_DC, GPIO_PIN_SET);
+	}
+#endif
 
 
 void GPIO_INIT(void){
-	GPIO_InitTypeDef gpio; 				//obiekt gpio bedacy konfiguracja portow GPIO
+	 				//obiekt gpio bedacy konfiguracja portow GPIO
 	gpio.Pin = GREEN_LED | PMOS_STEP; 			// green led output, SW_STEP_DR_CTRL
 	gpio.Mode = GPIO_MODE_OUTPUT_PP; 	// jako wyjscie
 	gpio.Pull = GPIO_NOPULL;			// rezystory podciagajace sa wylaczone
