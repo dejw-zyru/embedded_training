@@ -14,12 +14,15 @@
 #define CTRL_DC_DC 		GPIO_PIN_9
 #define GREEN_LED 		GPIO_PIN_13
 #define RED_LED 		GPIO_PIN_6
+#define RED_ALARM		GPIO_PIN_7
+#define BUZZER_ALARM	GPIO_PIN_12
 #define PMOS_LOGIC 		GPIO_PIN_1
 #define PMOS_DCDC 		GPIO_PIN_5
 #define PMOS_STEP 		GPIO_PIN_2
 #define ADC_CHANNELS	3
 
 #define	BUTTON_SYSTEM_START_OFF
+#define PWM_FIRST_TRY_ON
 
 uint16_t adc_value[ADC_CHANNELS];
 
@@ -33,6 +36,7 @@ GPIO_InitTypeDef gpio;
 void GPIO_INIT(void);
 void UART_INIT(void);
 void ADC_INIT(void);
+
 #ifdef BUTTON_SYSTEM_START_ON
 	void system_start(void);
 #endif
@@ -59,8 +63,27 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	HAL_GPIO_TogglePin(GPIOB, GREEN_LED); // toggle green led
 	HAL_GPIO_TogglePin(GPIOC, RED_LED);	// red led*/
+#ifdef PWM_FIRST_TRY_ON
+	HAL_GPIO_WritePin(GPIOB, BUZZER_ALARM, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(GPIOC, RED_ALARM, GPIO_PIN_SET);
+#endif
 }
 
+#ifdef PWM_FIRST_TRY_ON
+void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim){
+	switch (htim->Channel){
+	case HAL_TIM_ACTIVE_CHANNEL_1:
+		HAL_GPIO_WritePin(GPIOB, BUZZER_ALARM, GPIO_PIN_RESET);
+		break;
+	case HAL_TIM_ACTIVE_CHANNEL_2:
+		HAL_GPIO_WritePin(GPIOC, RED_ALARM, GPIO_PIN_RESET);
+		break;
+	default:
+		break;
+	}
+
+}
+#endif
 int main(void)
 {
 
@@ -83,21 +106,28 @@ int main(void)
 	#ifdef BUTTON_SYSTEM_START_ON
 		system_start();
 	#endif
+
 	GPIO_INIT();
 	UART_INIT();
 	ADC_INIT();
 
 	tim2.Instance = TIM2;
-	tim2.Init.Period = 5000 - 1;
+	tim2.Init.Period = 1000 - 1;
 	tim2.Init.Prescaler = 8000 - 1;
 	tim2.Init.ClockDivision = 0;
 	tim2.Init.CounterMode = TIM_COUNTERMODE_UP;
 	tim2.Init.RepetitionCounter = 0;
 	tim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-	HAL_TIM_Base_Init(&tim2);
 
+	HAL_TIM_Base_Init(&tim2);
 	HAL_NVIC_EnableIRQ(TIM2_IRQn);
 	HAL_TIM_Base_Start_IT(&tim2);
+
+#ifdef PWM_FIRST_TRY_ON
+	__HAL_TIM_SET_COMPARE(&tim2, TIM_CHANNEL_1,500);
+	__HAL_TIM_SET_COMPARE(&tim2, TIM_CHANNEL_2,900);
+	__HAL_TIM_ENABLE_IT(&tim2, TIM_IT_CC1 | TIM_IT_CC2);
+#endif
 
 	dma.Instance = DMA1_Channel1;				//kana³ pierwszy DMA
 	dma.Init.Direction = DMA_PERIPH_TO_MEMORY;	//kopiowanie z ukladu peryferyjnego do pamieci
@@ -115,9 +145,7 @@ int main(void)
 	int i = 0;
 
 	while(1){
-		/*HAL_GPIO_TogglePin(GPIOB, GREEN_LED); // toggle green led
-		//HAL_Delay(2000);
-		HAL_GPIO_TogglePin(GPIOC, RED_LED);	// red led*/
+
 		printf("Hello world!%d\n",i);
 
 
@@ -132,17 +160,31 @@ int main(void)
 		i++;
 
 
-
-		HAL_GPIO_WritePin(GPIOB, PMOS_STEP, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOC, PMOS_LOGIC, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOC, PMOS_DCDC, GPIO_PIN_SET);
+		if (i==1){
+			HAL_GPIO_WritePin(GPIOB, PMOS_STEP, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(GPIOC, PMOS_LOGIC, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(GPIOC, PMOS_DCDC, GPIO_PIN_SET);
+#ifdef PWM_FIRST_TRY_OFF
+			HAL_GPIO_WritePin(GPIOC, RED_ALARM, GPIO_PIN_SET);
+#endif
 		}
+#ifdef PWM_FIRST_TRY_OFF
+		if (i==5){
+			HAL_GPIO_WritePin(GPIOB, BUZZER_ALARM, GPIO_PIN_SET);
+			HAL_Delay(1500);
+			HAL_GPIO_WritePin(GPIOB, BUZZER_ALARM, GPIO_PIN_RESET);
+			i=0;
+		}
+#endif
+	}
 
 
 }
+
+//start prztwornicy - zasilania calego systemu
+
 #ifdef BUTTON_SYSTEM_START_ON
 	void system_start(void){
-		//start prztwornicy
 		gpio.Pin = CTRL_DC_DC;
 		gpio.Mode = GPIO_MODE_OUTPUT_PP;
 		gpio.Pull = GPIO_NOPULL;
@@ -154,14 +196,11 @@ int main(void)
 
 
 void GPIO_INIT(void){
-	 				//obiekt gpio bedacy konfiguracja portow GPIO
-	gpio.Pin = GREEN_LED | PMOS_STEP; 			// green led output, SW_STEP_DR_CTRL
+	gpio.Pin = GREEN_LED | PMOS_STEP | BUZZER_ALARM; 			// green led output, SW_STEP_DR_CTRL
 	gpio.Mode = GPIO_MODE_OUTPUT_PP; 	// jako wyjscie
 	gpio.Pull = GPIO_NOPULL;			// rezystory podciagajace sa wylaczone
 	gpio.Speed = GPIO_SPEED_FREQ_LOW;	// wystarcza niskie czestotliwosci przelaczania
 	HAL_GPIO_Init(GPIOB, &gpio); 		// inicjalizacja modulow GPIOB
-
-
 
 	gpio.Mode = GPIO_MODE_ANALOG;
 	gpio.Pin = GPIO_PIN_0;				// MEASURE 3.3V
@@ -171,14 +210,11 @@ void GPIO_INIT(void){
 	gpio.Pin = GPIO_PIN_0 | GPIO_PIN_1;				// IN0 -> 2.4V input voltage IN1 -> REF Voltage ->0.576
 	HAL_GPIO_Init(GPIOA, &gpio);
 
-
-	gpio.Pin = RED_LED | PMOS_LOGIC | PMOS_DCDC; 			// red led output, SW_LOGIC_CTRL, SW_DR_DC_CTRL
+	gpio.Pin = RED_LED | PMOS_LOGIC | PMOS_DCDC | RED_ALARM; 			// red led output, SW_LOGIC_CTRL, SW_DR_DC_CTRL
 	gpio.Mode = GPIO_MODE_OUTPUT_PP; 	// jako wyjscie
 	gpio.Pull = GPIO_NOPULL;			// rezystory podciagajace sa wylaczone
 	gpio.Speed = GPIO_SPEED_FREQ_LOW;	// wystarcza niskie czestotliwosci przelaczania
 	HAL_GPIO_Init(GPIOC, &gpio); 		// inicjalizacja modulow GPIOA
-
-
 
 	gpio.Mode = GPIO_MODE_AF_PP;	//alternatywna push-pull
 	gpio.Pin = GPIO_PIN_2;			//TX
@@ -222,9 +258,7 @@ void ADC_INIT(void){
 	adc.Init.NbrOfDiscConversion = 1;
 	HAL_ADC_Init(&adc);							//wlaczenie przetwornika
 
-
-
-	// konfigorowanie kana³ow przetwornika
+	// konfigurowanie kana³ow przetwornika
 	ADC_ChannelConfTypeDef adc_ch;
 	adc_ch.Channel = ADC_CHANNEL_8;				//STM32 supply voltage
 	adc_ch.Rank = ADC_REGULAR_RANK_1;			// pole Rank ustala kolejnosc wykonywania pomairow
