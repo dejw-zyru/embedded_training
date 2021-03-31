@@ -13,6 +13,7 @@
 #include "GPIO.h"
 #include "ADC_CONFIG.h"
 #include "UART_CONFIG.h"
+#include "CLOCK_ENABLE.h"
 
 
 #define	BUTTON_SYSTEM_START_OFF
@@ -79,18 +80,8 @@ int main(void)
 
 	SystemCoreClock = 8000000; //taktowanie8MHz
 	HAL_Init();
-	//enable ports
-	__HAL_RCC_GPIOA_CLK_ENABLE();
-	__HAL_RCC_GPIOC_CLK_ENABLE();
-	__HAL_RCC_GPIOB_CLK_ENABLE();
-	//enable usart
-	__HAL_RCC_USART2_CLK_ENABLE();
-	//enable ADC1
-	__HAL_RCC_ADC1_CLK_ENABLE();
-	//clock tim2
-	__HAL_RCC_TIM2_CLK_ENABLE();
-	//DMA clock enable
-	__HAL_RCC_DMA1_CLK_ENABLE();
+	ClockEnable();
+
 
 	//start przetwornicy
 	#ifdef BUTTON_SYSTEM_START_ON
