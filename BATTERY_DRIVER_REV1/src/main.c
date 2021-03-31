@@ -12,8 +12,8 @@
 #include "stm32f1xx.h"
 #include "GPIO.h"
 #include "ADC_CONFIG.h"
+#include "UART_CONFIG.h"
 
-//#define ADC_CHANNELS	3
 
 #define	BUTTON_SYSTEM_START_OFF
 #define PWM_FIRST_TRY_ON
@@ -27,9 +27,6 @@ ADC_HandleTypeDef adc;
 TIM_HandleTypeDef tim2;
 GPIO_InitTypeDef gpio;
 			
-
-void UART_INIT(void);
-//void ADC_INIT(void);
 
 #ifdef BUTTON_SYSTEM_START_ON
 	void system_start(void);
@@ -57,13 +54,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	HAL_GPIO_TogglePin(GPIOB, GREEN_LED); // toggle green led
 	HAL_GPIO_TogglePin(GPIOC, RED_LED);	// red led*/
-#ifdef PWM_FIRST_TRY_ON
+
 	HAL_GPIO_WritePin(GPIOB, BUZZER_ALARM, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(GPIOC, RED_ALARM, GPIO_PIN_SET);
-#endif
+
 }
 
-#ifdef PWM_FIRST_TRY_ON
+
 void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim){
 	switch (htim->Channel){
 	case HAL_TIM_ACTIVE_CHANNEL_1:
@@ -77,7 +74,7 @@ void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim){
 	}
 
 }
-#endif
+
 int main(void)
 {
 
@@ -117,11 +114,10 @@ int main(void)
 	HAL_NVIC_EnableIRQ(TIM2_IRQn);
 	HAL_TIM_Base_Start_IT(&tim2);
 
-#ifdef PWM_FIRST_TRY_ON
 	__HAL_TIM_SET_COMPARE(&tim2, TIM_CHANNEL_1,500);
 	__HAL_TIM_SET_COMPARE(&tim2, TIM_CHANNEL_2,900);
 	__HAL_TIM_ENABLE_IT(&tim2, TIM_IT_CC1 | TIM_IT_CC2);
-#endif
+
 
 	dma.Instance = DMA1_Channel1;				//kana³ pierwszy DMA
 	dma.Init.Direction = DMA_PERIPH_TO_MEMORY;	//kopiowanie z ukladu peryferyjnego do pamieci
@@ -179,17 +175,7 @@ int main(void)
 	}
 #endif
 
-void UART_INIT(void){
-	uart.Instance = USART2;
-	uart.Init.BaudRate = 115200;
-	uart.Init.WordLength = UART_WORDLENGTH_8B;
-	uart.Init.Parity = UART_PARITY_NONE;
-	uart.Init.StopBits = UART_STOPBITS_1;
-	uart.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-	uart.Init.OverSampling = UART_OVERSAMPLING_16;
-	uart.Init.Mode = UART_MODE_TX_RX;
-	HAL_UART_Init(&uart);
-}
+
 
 
 
