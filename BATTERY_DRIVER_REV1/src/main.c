@@ -11,13 +11,14 @@
 #include <string.h>
 #include "stm32f1xx.h"
 #include "GPIO.h"
+#include "ADC_CONFIG.h"
 
-#define ADC_CHANNELS	3
+//#define ADC_CHANNELS	3
 
 #define	BUTTON_SYSTEM_START_OFF
 #define PWM_FIRST_TRY_ON
 
-uint16_t adc_value[ADC_CHANNELS];
+uint16_t adcValue[ADC_CHANNELS];
 
 DMA_HandleTypeDef dma;
 
@@ -28,7 +29,7 @@ GPIO_InitTypeDef gpio;
 			
 
 void UART_INIT(void);
-void ADC_INIT(void);
+//void ADC_INIT(void);
 
 #ifdef BUTTON_SYSTEM_START_ON
 	void system_start(void);
@@ -133,7 +134,7 @@ int main(void)
 	HAL_DMA_Init(&dma);							//inicjalizacja DMA
 	__HAL_LINKDMA(&adc, DMA_Handle, dma);		//makro powiazujace kanal DMA z modulem ADC
 
-	HAL_ADC_Start_DMA(&adc, (uint32_t*)adc_value, ADC_CHANNELS);
+	HAL_ADC_Start_DMA(&adc, (uint32_t*)adcValue, ADC_CHANNELS);
 
 	int i = 0;
 
@@ -142,13 +143,13 @@ int main(void)
 		printf("Hello world!%d\n",i);
 
 
-		printf("\n\n\nSTM32 supply voltage is = %d convert: (%.1eV)\r\n", adc_value[0], 2 * adc_value[0] * 3.3f / 4096.0f);
+		printf("\n\n\nSTM32 supply voltage is = %d convert: (%.1eV)\r\n", adcValue[0], 2 * adcValue[0] * 3.3f / 4096.0f);
 
 
-		printf("Input voltage is = %d convert:(%.1eV)\r\n", adc_value[1], 10 * adc_value[1] * 3.3f / 4096.0f);
+		printf("Input voltage is = %d convert:(%.1eV)\r\n", adcValue[1], 10 * adcValue[1] * 3.3f / 4096.0f);
 
 
-		printf("Reference voltage is = %d convert:(%.1eV)\r\n\n\n\n", adc_value[2],  adc_value[2] * 3.3f / 4096.0f);
+		printf("Reference voltage is = %d convert:(%.1eV)\r\n\n\n\n", adcValue[2],  adcValue[2] * 3.3f / 4096.0f);
 		HAL_Delay(2000);
 		i++;
 
@@ -157,18 +158,9 @@ int main(void)
 			HAL_GPIO_WritePin(GPIOB, PMOS_STEP, GPIO_PIN_SET);
 			HAL_GPIO_WritePin(GPIOC, PMOS_LOGIC, GPIO_PIN_SET);
 			HAL_GPIO_WritePin(GPIOC, PMOS_DCDC, GPIO_PIN_SET);
-#ifdef PWM_FIRST_TRY_OFF
-			HAL_GPIO_WritePin(GPIOC, RED_ALARM, GPIO_PIN_SET);
-#endif
+
 		}
-#ifdef PWM_FIRST_TRY_OFF
-		if (i==5){
-			HAL_GPIO_WritePin(GPIOB, BUZZER_ALARM, GPIO_PIN_SET);
-			HAL_Delay(1500);
-			HAL_GPIO_WritePin(GPIOB, BUZZER_ALARM, GPIO_PIN_RESET);
-			i=0;
-		}
-#endif
+
 	}
 
 
@@ -199,42 +191,6 @@ void UART_INIT(void){
 	HAL_UART_Init(&uart);
 }
 
-void ADC_INIT(void){
-	//konfiguraca petli PLL
-	// przetwornik nie moze pracowac powyzej 14MHz
-	RCC_PeriphCLKInitTypeDef adc_clk;
-	adc_clk.PeriphClockSelection = RCC_PERIPHCLK_ADC;
-	adc_clk.AdcClockSelection = RCC_ADCPCLK2_DIV2;//najmniejszy dzielnik 2
-	HAL_RCCEx_PeriphCLKConfig(&adc_clk);
 
-	//usatwienie zmiennej + parametry pracy
-	adc.Instance = ADC1;
-	adc.Init.ContinuousConvMode = ENABLE;			//chcemy caly czas odczytywac pomiarow
-	adc.Init.ExternalTrigConv = ADC_SOFTWARE_START;
-	adc.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-	adc.Init.ScanConvMode = ADC_SCAN_ENABLE;		//wiele kanalow odczytujemy
-	adc.Init.NbrOfConversion = ADC_CHANNELS;		//liczba kana³ow
-	adc.Init.DiscontinuousConvMode = DISABLE;
-	adc.Init.NbrOfDiscConversion = 1;
-	HAL_ADC_Init(&adc);							//wlaczenie przetwornika
-
-	// konfigurowanie kana³ow przetwornika
-	ADC_ChannelConfTypeDef adc_ch;
-	adc_ch.Channel = ADC_CHANNEL_8;				//STM32 supply voltage
-	adc_ch.Rank = ADC_REGULAR_RANK_1;			// pole Rank ustala kolejnosc wykonywania pomairow
-	adc_ch.SamplingTime = ADC_SAMPLETIME_239CYCLES_5;
-	HAL_ADC_ConfigChannel(&adc, &adc_ch);
-
-	adc_ch.Channel = ADC_CHANNEL_0;				//Input voltage is
-	adc_ch.Rank = ADC_REGULAR_RANK_2;
-	HAL_ADC_ConfigChannel(&adc, &adc_ch);
-
-	adc_ch.Channel = ADC_CHANNEL_1;				//Input voltage is
-	adc_ch.Rank = ADC_REGULAR_RANK_3;
-	HAL_ADC_ConfigChannel(&adc, &adc_ch);
-
-	//start kalibracji
-	HAL_ADCEx_Calibration_Start(&adc);			//autokalibracaj przetwornika
-}
 
 
