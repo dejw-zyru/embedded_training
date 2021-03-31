@@ -187,9 +187,6 @@ int main(void)
 	}
 #endif
 
-
-
-
 void UART_INIT(void){
 	uart.Instance = USART2;
 	uart.Init.BaudRate = 115200;
