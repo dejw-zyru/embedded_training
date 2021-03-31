@@ -10,9 +10,19 @@
 
 #define ADC_CHANNELS	3
 
+GPIO_InitTypeDef gpio;
 ADC_HandleTypeDef adc;
 
 void ADC_INIT(void){
+
+	gpio.Mode = GPIO_MODE_ANALOG;
+	gpio.Pin = MEASURE_OUTPUT_DCDC_CONV_VOLTAGE;				// MEASURE 3.3V
+	HAL_GPIO_Init(GPIOB, &gpio);
+
+	gpio.Mode = GPIO_MODE_ANALOG;
+	gpio.Pin = MEASURE_INPUT_SYSTEM_VOLTAGE | MEASURE_REFERENCE_VOLTAGE;				// IN0 -> 2.4V input voltage IN1 -> REF Voltage ->0.576
+	HAL_GPIO_Init(GPIOA, &gpio);
+
 	//konfiguraca petli PLL
 	// przetwornik nie moze pracowac powyzej 14MHz
 	RCC_PeriphCLKInitTypeDef adc_clk;

@@ -16,7 +16,6 @@
 
 
 #define	BUTTON_SYSTEM_START_OFF
-#define PWM_FIRST_TRY_ON
 
 uint16_t adcValue[ADC_CHANNELS];
 

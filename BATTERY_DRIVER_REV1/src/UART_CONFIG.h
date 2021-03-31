@@ -8,6 +8,8 @@
 #ifndef UART_CONFIG_H_
 #define UART_CONFIG_H_
 
+#define UART_TX		GPIO_PIN_2
+#define UART_RX		GPIO_PIN_3
 
 void UART_INIT(void);
 
