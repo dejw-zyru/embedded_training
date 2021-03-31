@@ -14,6 +14,7 @@
 #include "ADC_CONFIG.h"
 #include "UART_CONFIG.h"
 #include "CLOCK_ENABLE.h"
+#include "TIM_CONFIG.h"
 
 
 #define	BUTTON_SYSTEM_START_OFF
@@ -92,21 +93,7 @@ int main(void)
 	UART_INIT();
 	ADC_INIT();
 
-	tim2.Instance = TIM2;
-	tim2.Init.Period = 5000 - 1;
-	tim2.Init.Prescaler = 8000 - 1;
-	tim2.Init.ClockDivision = 0;
-	tim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-	tim2.Init.RepetitionCounter = 0;
-	tim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-
-	HAL_TIM_Base_Init(&tim2);
-	HAL_NVIC_EnableIRQ(TIM2_IRQn);
-	HAL_TIM_Base_Start_IT(&tim2);
-
-	__HAL_TIM_SET_COMPARE(&tim2, TIM_CHANNEL_1,500);
-	__HAL_TIM_SET_COMPARE(&tim2, TIM_CHANNEL_2,900);
-	__HAL_TIM_ENABLE_IT(&tim2, TIM_IT_CC1 | TIM_IT_CC2);
+	TimConfig();
 
 
 	dma.Instance = DMA1_Channel1;				//kana³ pierwszy DMA
@@ -119,7 +106,6 @@ int main(void)
 	dma.Init.Priority = DMA_PRIORITY_HIGH;		//ustawienie wyskiego priorytetu
 	HAL_DMA_Init(&dma);							//inicjalizacja DMA
 	__HAL_LINKDMA(&adc, DMA_Handle, dma);		//makro powiazujace kanal DMA z modulem ADC
-
 	HAL_ADC_Start_DMA(&adc, (uint32_t*)adcValue, ADC_CHANNELS);
 
 	int i = 0;
