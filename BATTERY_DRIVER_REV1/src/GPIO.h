@@ -8,7 +8,7 @@
 #ifndef GPIO_H_
 #define GPIO_H_
 
-#define CTRL_DC_DC 		GPIO_PIN_9
+
 #define GREEN_LED 		GPIO_PIN_13
 #define RED_LED 		GPIO_PIN_6
 #define RED_ALARM		GPIO_PIN_7

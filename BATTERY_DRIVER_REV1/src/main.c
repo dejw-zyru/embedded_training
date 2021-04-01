@@ -15,23 +15,18 @@
 #include "CLOCK_CONFIG.h"
 #include "UART_CONFIG.h"
 #include "TIM_CONFIG.h"
+#include "BUTTON_SYSTEM_START.h"
+#include "DMA_CONFIG.h"
 
 
 #define	BUTTON_SYSTEM_START_OFF
 
 uint16_t adcValue[ADC_CHANNELS];
 
-DMA_HandleTypeDef dma;
-
 UART_HandleTypeDef uart;
 ADC_HandleTypeDef adc;
 TIM_HandleTypeDef tim2;
-GPIO_InitTypeDef gpio;
-			
 
-#ifdef BUTTON_SYSTEM_START_ON
-	void system_start(void);
-#endif
 
 void send_char(char c)
 {
@@ -82,31 +77,16 @@ int main(void)
 	SystemCoreClock = 8000000; //taktowanie8MHz
 	HAL_Init();
 	ClockConfig();
-
-
-	//start przetwornicy
+	//start systemu dzieki zwarciu MOSFETA-N za pomoca przycisku
 	#ifdef BUTTON_SYSTEM_START_ON
-		system_start();
+		SystemStart();
 	#endif
 
 	GpioConfig();
 	UartConfig();
 	AdcConfig();
-
 	TimConfig();
-
-
-	dma.Instance = DMA1_Channel1;				//kana³ pierwszy DMA
-	dma.Init.Direction = DMA_PERIPH_TO_MEMORY;	//kopiowanie z ukladu peryferyjnego do pamieci
-	dma.Init.PeriphInc = DMA_PINC_DISABLE;		//adres rejestru przetwornika staly??
-	dma.Init.MemInc = DMA_MINC_ENABLE;			//zapisywanie wynikow w kolejnych zmiennych
-	dma.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;	//16 bitowe zmienne do odczytywania 12 bitowego wyniku
-	dma.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
-	dma.Init.Mode = DMA_CIRCULAR;				//odczyt ma nastepowac ciagle
-	dma.Init.Priority = DMA_PRIORITY_HIGH;		//ustawienie wyskiego priorytetu
-	HAL_DMA_Init(&dma);							//inicjalizacja DMA
-	__HAL_LINKDMA(&adc, DMA_Handle, dma);		//makro powiazujace kanal DMA z modulem ADC
-	HAL_ADC_Start_DMA(&adc, (uint32_t*)adcValue, ADC_CHANNELS);
+	DmaConfig();
 
 	int i = 0;
 
@@ -138,18 +118,8 @@ int main(void)
 
 }
 
-//start prztwornicy - zasilania calego systemu
 
-#ifdef BUTTON_SYSTEM_START_ON
-	void system_start(void){
-		gpio.Pin = CTRL_DC_DC;
-		gpio.Mode = GPIO_MODE_OUTPUT_PP;
-		gpio.Pull = GPIO_NOPULL;
-		gpio.Speed = GPIO_SPEED_FREQ_LOW;
-		HAL_GPIO_Init(GPIOC, &gpio);
-		HAL_GPIO_WritePin(GPIOC, CTRL_DC_DC, GPIO_PIN_SET);
-	}
-#endif
+
 
 
 
