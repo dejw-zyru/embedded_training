@@ -17,7 +17,7 @@
 #define PMOS_DCDC 		GPIO_PIN_5
 #define PMOS_STEP 		GPIO_PIN_2
 
-void GPIO_INIT(void);
+void GpioConfig(void);
 
 
 #endif /* GPIO_H_ */

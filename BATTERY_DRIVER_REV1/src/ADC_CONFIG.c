@@ -13,7 +13,7 @@
 GPIO_InitTypeDef gpio;
 ADC_HandleTypeDef adc;
 
-void ADC_INIT(void){
+void AdcConfig(void){
 
 	gpio.Mode = GPIO_MODE_ANALOG;
 	gpio.Pin = MEASURE_OUTPUT_DCDC_CONV_VOLTAGE;				// MEASURE 3.3V

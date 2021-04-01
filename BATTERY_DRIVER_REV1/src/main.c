@@ -12,8 +12,8 @@
 #include "stm32f1xx.h"
 #include "GPIO.h"
 #include "ADC_CONFIG.h"
+#include "CLOCK_CONFIG.h"
 #include "UART_CONFIG.h"
-#include "CLOCK_ENABLE.h"
 #include "TIM_CONFIG.h"
 
 
@@ -81,7 +81,7 @@ int main(void)
 
 	SystemCoreClock = 8000000; //taktowanie8MHz
 	HAL_Init();
-	ClockEnable();
+	ClockConfig();
 
 
 	//start przetwornicy
@@ -89,9 +89,9 @@ int main(void)
 		system_start();
 	#endif
 
-	GPIO_INIT();
-	UART_INIT();
-	ADC_INIT();
+	GpioConfig();
+	UartConfig();
+	AdcConfig();
 
 	TimConfig();
 

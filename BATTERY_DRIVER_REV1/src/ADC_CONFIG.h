@@ -13,6 +13,6 @@
 #define MEASURE_INPUT_SYSTEM_VOLTAGE 		GPIO_PIN_0
 #define	MEASURE_REFERENCE_VOLTAGE 			GPIO_PIN_1
 
-void ADC_INIT(void);
+void AdcConfig(void);
 
 #endif /* ADC_CONFIG_H_ */

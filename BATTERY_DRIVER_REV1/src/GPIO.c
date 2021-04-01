@@ -10,7 +10,7 @@
 #include "stm32f1xx.h"
 GPIO_InitTypeDef gpio;
 
-void GPIO_INIT(void){
+void GpioConfig(void){
 	gpio.Pin = GREEN_LED | PMOS_STEP | BUZZER_ALARM; 			// green led output, SW_STEP_DR_CTRL
 	gpio.Mode = GPIO_MODE_OUTPUT_PP; 	// jako wyjscie
 	gpio.Pull = GPIO_NOPULL;			// rezystory podciagajace sa wylaczone

@@ -5,10 +5,11 @@
  *      Author: david
  */
 
-#include "stm32f1xx.h"
-#include "CLOCK_ENABLE.h"
+#include "CLOCK_CONFIG.h"
 
-void ClockEnable(void){
+#include "stm32f1xx.h"
+
+void ClockConfig(void){
 	//enable ports
 	__HAL_RCC_GPIOA_CLK_ENABLE();
 	__HAL_RCC_GPIOC_CLK_ENABLE();

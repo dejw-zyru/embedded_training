@@ -11,7 +11,7 @@
 #define UART_TX		GPIO_PIN_2
 #define UART_RX		GPIO_PIN_3
 
-void UART_INIT(void);
+void UartConfig(void);
 
 
 #endif /* UART_CONFIG_H_ */

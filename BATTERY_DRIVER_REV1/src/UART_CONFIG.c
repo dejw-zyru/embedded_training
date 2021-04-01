@@ -11,7 +11,7 @@
 GPIO_InitTypeDef gpio;
 UART_HandleTypeDef uart;
 
-void UART_INIT(void){
+void UartConfig(void){
 
 	/*konfigurcja pinow do USARTa 2*/
 
