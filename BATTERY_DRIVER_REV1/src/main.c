@@ -17,14 +17,16 @@
 #include "TIM_CONFIG.h"
 #include "BUTTON_SYSTEM_START.h"
 #include "DMA_CONFIG.h"
+#include "PRINTF.h"
 
 #define	BUTTON_SYSTEM_START_OFF
+#define	TRY_SPI_OFF
 
 uint16_t adcValue[ADC_CHANNELS];
 
 UART_HandleTypeDef uart;
 
-void send_char(char c)
+/*void send_char(char c)
 {
 	HAL_UART_Transmit(&uart, (uint8_t*)&c, 1, 1000);
 }
@@ -35,7 +37,7 @@ int __io_putchar(int ch)
 		send_char('\r');
 	send_char(ch);
 	return ch;
-}
+}*/
 
 int main(void)
 {
@@ -59,10 +61,10 @@ int main(void)
 
 	while(1){
 
-		printf("Hello world!%d\n",i);
-		printf("\n\n\nSTM32 supply voltage is = %d convert: (%.1eV)\r\n", adcValue[0], 2 * adcValue[0] * 3.3f / 4096.0f);
-		printf("Input voltage is = %d convert:(%.1eV)\r\n", adcValue[1], 10 * adcValue[1] * 3.3f / 4096.0f);
-		printf("Reference voltage is = %d convert:(%.1eV)\r\n\n\n\n", adcValue[2],  adcValue[2] * 3.3f / 4096.0f);
+		printf_("Hello world!%d\n\r",i);
+		printf_("\n\n\nSTM32 supply voltage is = %d convert: (%dmV)\n\r", adcValue[0], 2 * adcValue[0] * 3300 / 4096);
+		printf_("Input voltage is = %d convert:(%.1fV)\n\r", adcValue[1], 10 * adcValue[1] * 3.3f / 4096.0f);
+		printf_("Reference voltage is = %d convert:(%.1eV)\n\n\n\n\r", adcValue[2],  adcValue[2] * 3.3f / 4096.0f);
 
 		HAL_Delay(2000);
 		i++;
