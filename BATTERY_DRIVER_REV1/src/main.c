@@ -8,7 +8,6 @@
   ******************************************************************************
 */
 
-//#include <string.h>
 #include "stm32f1xx.h"
 #include "GPIO.h"
 #include "ADC_CONFIG.h"
@@ -18,26 +17,14 @@
 #include "BUTTON_SYSTEM_START.h"
 #include "DMA_CONFIG.h"
 #include "PRINTF.h"
+#include "SPI_CONFIG.h"
 
 #define	BUTTON_SYSTEM_START_OFF
-#define	TRY_SPI_OFF
+#define	TRY_SPI_ON
 
 uint16_t adcValue[ADC_CHANNELS];
 
-UART_HandleTypeDef uart;
 
-/*void send_char(char c)
-{
-	HAL_UART_Transmit(&uart, (uint8_t*)&c, 1, 1000);
-}
-
-int __io_putchar(int ch)
-{
-	if (ch == '\n')
-		send_char('\r');
-	send_char(ch);
-	return ch;
-}*/
 
 int main(void)
 {
@@ -56,6 +43,10 @@ int main(void)
 	AdcConfig();
 	TimConfig();
 	DmaConfig();
+	#ifdef TRY_SPI_ON
+		SpiConfig();
+	#endif
+
 
 	int i = 0;
 

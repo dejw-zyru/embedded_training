@@ -22,5 +22,7 @@ void ClockConfig(void){
 	__HAL_RCC_TIM2_CLK_ENABLE();
 	//DMA clock enable
 	__HAL_RCC_DMA1_CLK_ENABLE();
+	//SPI_ENABLE
+	__HAL_RCC_SPI1_CLK_ENABLE();
 }
 
