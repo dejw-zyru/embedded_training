@@ -24,9 +24,9 @@ void SpiConfig(void){
 	HAL_GPIO_Init(GPIOA, &gpio);
 
 	gpio.Mode = GPIO_MODE_OUTPUT_PP;
-	gpio.Pin = RTD_NSS;
+	gpio.Pin = RTD_CS;
 	HAL_GPIO_Init(GPIOA, &gpio);
-	HAL_GPIO_WritePin(GPIOA, RTD_NSS, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(GPIOA, RTD_CS, GPIO_PIN_SET);//aktywowane stanem niskim
 
 	spi.Instance = SPI1;
 	spi.Init.Mode = SPI_MODE_MASTER;

@@ -24,7 +24,28 @@
 
 uint16_t adcValue[ADC_CHANNELS];
 
+SPI_HandleTypeDef spi;
+uint8_t resistance;
 
+//obsluge SPI
+void mcp_write_reg(uint8_t addr)
+{
+	uint8_t tx_buf[] = { addr };
+
+	HAL_GPIO_WritePin(GPIOA, RTD_CS, GPIO_PIN_RESET);
+	HAL_SPI_Transmit(&spi, tx_buf, 1, HAL_MAX_DELAY);
+	HAL_GPIO_WritePin(GPIOA, RTD_CS, GPIO_PIN_SET);
+}
+uint8_t get_resistance(){
+	uint8_t tx_buf[] = { 0x01, 0xff };
+	uint8_t rx_buf[1];
+
+	HAL_GPIO_WritePin(GPIOA, RTD_CS, GPIO_PIN_RESET);
+	HAL_SPI_TransmitReceive(&spi, tx_buf, rx_buf, 2, HAL_MAX_DELAY);
+	HAL_GPIO_WritePin(GPIOA, RTD_CS, GPIO_PIN_SET);
+
+	return rx_buf[1];
+}
 
 int main(void)
 {
@@ -45,6 +66,8 @@ int main(void)
 	DmaConfig();
 	#ifdef TRY_SPI_ON
 		SpiConfig();
+		mcp_write_reg(0x80);
+		mcp_write_reg(0xD2);
 	#endif
 
 
@@ -52,7 +75,10 @@ int main(void)
 
 	while(1){
 
+		resistance=get_resistance();
+
 		printf_("Hello world!%d\n\r",i);
+		printf_("Resistance value is %d\n\r",resistance);
 		printf_("\n\n\nSTM32 supply voltage is = %d convert: (%dmV)\n\r", adcValue[0], 2 * adcValue[0] * 3300 / 4096);
 		printf_("Input voltage is = %d convert:(%.1fV)\n\r", adcValue[1], 10 * adcValue[1] * 3.3f / 4096.0f);
 		printf_("Reference voltage is = %d convert:(%.1eV)\n\n\n\n\r", adcValue[2],  adcValue[2] * 3.3f / 4096.0f);
