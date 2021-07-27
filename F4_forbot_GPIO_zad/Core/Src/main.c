@@ -52,7 +52,8 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
-	if (GPIO_Pin == BUTTON_Pin)//dodane w przypadku gdy bedzie wystepowac wiecej przerwan
+	HAL_Delay(80);
+	if (HAL_GPIO_ReadPin(BUTTON_GPIO_Port, BUTTON_Pin) == GPIO_PIN_SET)
 	{
 
 		counter++;
@@ -84,7 +85,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 
 
 	}
-	HAL_Delay(2000);
+
 
 }
 
