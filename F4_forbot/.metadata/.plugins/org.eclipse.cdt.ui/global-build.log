@@ -1,0 +1,35 @@
+20:40:00 **** Incremental Build of configuration Debug for project F4_forbot_05_ADC_ZAD ****
+make -j4 all 
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_05_ADC_ZAD/Core/Src/main.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\F4_forbot\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/Core/main.d" -MT"Application/User/Core/main.o" -o "Application/User/Core/main.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_05_ADC_ZAD/Core/Src/main.c"
+C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_05_ADC_ZAD/Core/Src/main.c: In function 'main':
+C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_05_ADC_ZAD/Core/Src/main.c:115:28: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
+   HAL_ADC_Start_DMA(&hadc1,joystick,3);
+                            ^~~~~~~~
+In file included from C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_05_ADC_ZAD/Core/Inc/stm32f4xx_hal_conf.h:294:0,
+                 from C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_05_ADC_ZAD/Core/Inc/main.h:31,
+                 from C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_05_ADC_ZAD/Core/Src/main.c:21:
+C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h:595:19: note: expected 'uint32_t * {aka long unsigned int *}' but argument is of type 'uint16_t * {aka short unsigned int *}'
+ HAL_StatusTypeDef HAL_ADC_Start_DMA(ADC_HandleTypeDef* hadc, uint32_t* pData, uint32_t Length);
+                   ^~~~~~~~~~~~~~~~~
+C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_05_ADC_ZAD/Core/Src/main.c: In function 'AlarmFunction':
+C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_05_ADC_ZAD/Core/Src/main.c:365:63: warning: comparison between 'GPIO_PinState {aka enum <anonymous>}' and 'enum <anonymous>' [-Wenum-compare]
+   if (HAL_GPIO_ReadPin(ALARM_RESET_GPIO_Port,ALARM_RESET_Pin) == SET){
+                                                               ^~
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_05_ADC_ZAD/Core/Src/main.c
+ 
+Building target: F4_forbot_05_ADC_ZAD.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F411VETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "F4_forbot_05_ADC_ZAD.elf" @"objects.list"   -lm
+Finished building target: F4_forbot_05_ADC_ZAD.elf
+ 
+C:/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/make/make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex "F4_forbot_05_ADC_ZAD.elf" "F4_forbot_05_ADC_ZAD.hex"
+arm-none-eabi-size "F4_forbot_05_ADC_ZAD.elf"
+   text	   data	    bss	    dec	    hex	filename
+   8864	     20	   1748	  10632	   2988	F4_forbot_05_ADC_ZAD.elf
+ 

@@ -361,7 +361,7 @@ void AlarmFunction(void)
 {
 	while(1){
 		HAL_GPIO_TogglePin(GPIOD,LED_GREEN_Pin|LED_ORANGE_Pin|LED_RED_Pin|LED_BLUE_Pin);
-		HAL_Delay(100);
+		HAL_Delay(3);
 		if (HAL_GPIO_ReadPin(ALARM_RESET_GPIO_Port,ALARM_RESET_Pin) == SET){
 			break;
 		}

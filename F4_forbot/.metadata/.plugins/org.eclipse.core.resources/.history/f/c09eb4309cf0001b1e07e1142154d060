@@ -182,7 +182,7 @@ int main(void)
 		 	HAL_GPIO_WritePin(GPIOD, LED_ORANGE_Pin, GPIO_PIN_RESET);
 		 }
 	 }
-	 if (joystick[2] > 1045 ){
+	 if (joystick[3] > 1045 ){
 		 AlarmFunction();
 	 }
   }
@@ -361,7 +361,7 @@ void AlarmFunction(void)
 {
 	while(1){
 		HAL_GPIO_TogglePin(GPIOD,LED_GREEN_Pin|LED_ORANGE_Pin|LED_RED_Pin|LED_BLUE_Pin);
-		HAL_Delay(100);
+		HAL_Delay(3);
 		if (HAL_GPIO_ReadPin(ALARM_RESET_GPIO_Port,ALARM_RESET_Pin) == SET){
 			break;
 		}

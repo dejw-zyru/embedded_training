@@ -57,12 +57,11 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_DMA_Init(void);
 static void MX_ADC1_Init(void);
-void AlarmFunction(void);
 /* USER CODE BEGIN PFP */
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
-	HAL_Delay(100);
-	if (HAL_GPIO_ReadPin(GPIOA,SW_Pin) == GPIO_PIN_RESET){
+	HAL_Delay(25);
+	if (HAL_GPIO_ReadPin(GPIOA,ALARM_RESET_Pin) == GPIO_PIN_SET){
 		if (ReverseWork == SET){
 			ReverseWork = RESET;
 		}
@@ -70,7 +69,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 			ReverseWork = SET;
 		}
 	}
-
 }
 
 /* USER CODE END PFP */
@@ -181,9 +179,6 @@ int main(void)
 		 else{
 		 	HAL_GPIO_WritePin(GPIOD, LED_ORANGE_Pin, GPIO_PIN_RESET);
 		 }
-	 }
-	 if (joystick[2] > 1045 ){
-		 AlarmFunction();
 	 }
   }
 
@@ -306,7 +301,7 @@ static void MX_DMA_Init(void)
 
   /* DMA interrupt init */
   /* DMA2_Stream0_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 1, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);
 
 }
@@ -335,8 +330,8 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : SW_Pin */
   GPIO_InitStruct.Pin = SW_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(SW_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : LED_GREEN_Pin LED_ORANGE_Pin LED_RED_Pin LED_BLUE_Pin */
@@ -356,18 +351,6 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
-void AlarmFunction(void)
-{
-	while(1){
-		HAL_GPIO_TogglePin(GPIOD,LED_GREEN_Pin|LED_ORANGE_Pin|LED_RED_Pin|LED_BLUE_Pin);
-		HAL_Delay(100);
-		if (HAL_GPIO_ReadPin(ALARM_RESET_GPIO_Port,ALARM_RESET_Pin) == SET){
-			break;
-		}
-	}
-
-}
 
 /* USER CODE END 4 */
 
