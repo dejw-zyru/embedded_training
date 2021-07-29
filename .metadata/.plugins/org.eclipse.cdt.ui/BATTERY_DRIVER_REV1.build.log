@@ -1,0 +1,440 @@
+10:30:43 **** Build of configuration Debug for project BATTERY_DRIVER_REV1 ****
+make -j4 all 
+Building file: ../src/ADC_CONFIG.c
+Building file: ../startup/startup_stm32.s
+Building file: ../src/BUTTON_SYSTEM_START.c
+Building file: ../src/CLOCK_CONFIG.c
+Invoking: MCU GCC Assembler
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-as -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -g -o "startup/startup_stm32.o" "../startup/startup_stm32.s"
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/ADC_CONFIG.d" -MT"src/ADC_CONFIG.o" -o "src/ADC_CONFIG.o" "../src/ADC_CONFIG.c"
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/CLOCK_CONFIG.d" -MT"src/CLOCK_CONFIG.o" -o "src/CLOCK_CONFIG.o" "../src/CLOCK_CONFIG.c"
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/BUTTON_SYSTEM_START.d" -MT"src/BUTTON_SYSTEM_START.o" -o "src/BUTTON_SYSTEM_START.o" "../src/BUTTON_SYSTEM_START.c"
+Finished building: ../startup/startup_stm32.s
+ 
+Building file: ../src/DMA_CONFIG.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/DMA_CONFIG.d" -MT"src/DMA_CONFIG.o" -o "src/DMA_CONFIG.o" "../src/DMA_CONFIG.c"
+Finished building: ../src/ADC_CONFIG.c
+Finished building: ../src/CLOCK_CONFIG.c
+Finished building: ../src/BUTTON_SYSTEM_START.c
+ 
+ 
+ 
+Building file: ../src/GPIO.c
+Building file: ../src/PRINTF.c
+Building file: ../src/SPI_CONFIG.c
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+Finished building: ../src/DMA_CONFIG.c
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/GPIO.d" -MT"src/GPIO.o" -o "src/GPIO.o" "../src/GPIO.c"
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/PRINTF.d" -MT"src/PRINTF.o" -o "src/PRINTF.o" "../src/PRINTF.c"
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/SPI_CONFIG.d" -MT"src/SPI_CONFIG.o" -o "src/SPI_CONFIG.o" "../src/SPI_CONFIG.c"
+ 
+Building file: ../src/TIM2_Handler.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/TIM2_Handler.d" -MT"src/TIM2_Handler.o" -o "src/TIM2_Handler.o" "../src/TIM2_Handler.c"
+Finished building: ../src/GPIO.c
+Finished building: ../src/SPI_CONFIG.c
+ 
+ 
+Building file: ../src/TIM_CONFIG.c
+Finished building: ../src/PRINTF.c
+Building file: ../src/UART_CONFIG.c
+Invoking: MCU GCC Compiler
+ 
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+Building file: ../src/main.c
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/TIM_CONFIG.d" -MT"src/TIM_CONFIG.o" -o "src/TIM_CONFIG.o" "../src/TIM_CONFIG.c"
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/UART_CONFIG.d" -MT"src/UART_CONFIG.o" -o "src/UART_CONFIG.o" "../src/UART_CONFIG.c"
+Invoking: MCU GCC Compiler
+Finished building: ../src/TIM2_Handler.c
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+ 
+Building file: ../src/stm32f1xx_it.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/stm32f1xx_it.d" -MT"src/stm32f1xx_it.o" -o "src/stm32f1xx_it.o" "../src/stm32f1xx_it.c"
+Finished building: ../src/TIM_CONFIG.c
+Finished building: ../src/UART_CONFIG.c
+ 
+ 
+Building file: ../src/syscalls.c
+Finished building: ../src/main.c
+Building file: ../src/system_stm32f1xx.c
+Invoking: MCU GCC Compiler
+ 
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/syscalls.d" -MT"src/syscalls.o" -o "src/syscalls.o" "../src/syscalls.c"
+Building file: ../HAL_Driver/Src/stm32f1xx_hal.c
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/system_stm32f1xx.d" -MT"src/system_stm32f1xx.o" -o "src/system_stm32f1xx.o" "../src/system_stm32f1xx.c"
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal.d" -MT"HAL_Driver/Src/stm32f1xx_hal.o" -o "HAL_Driver/Src/stm32f1xx_hal.o" "../HAL_Driver/Src/stm32f1xx_hal.c"
+Finished building: ../src/stm32f1xx_it.c
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_adc.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_adc.d" -MT"HAL_Driver/Src/stm32f1xx_hal_adc.o" -o "HAL_Driver/Src/stm32f1xx_hal_adc.o" "../HAL_Driver/Src/stm32f1xx_hal_adc.c"
+Finished building: ../src/syscalls.c
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_adc_ex.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_adc_ex.d" -MT"HAL_Driver/Src/stm32f1xx_hal_adc_ex.o" -o "HAL_Driver/Src/stm32f1xx_hal_adc_ex.o" "../HAL_Driver/Src/stm32f1xx_hal_adc_ex.c"
+Finished building: ../src/system_stm32f1xx.c
+ 
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal.c
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_cec.c
+ 
+Invoking: MCU GCC Compiler
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_cortex.c
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_cec.d" -MT"HAL_Driver/Src/stm32f1xx_hal_cec.o" -o "HAL_Driver/Src/stm32f1xx_hal_cec.o" "../HAL_Driver/Src/stm32f1xx_hal_cec.c"
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_cortex.d" -MT"HAL_Driver/Src/stm32f1xx_hal_cortex.o" -o "HAL_Driver/Src/stm32f1xx_hal_cortex.o" "../HAL_Driver/Src/stm32f1xx_hal_cortex.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_adc.c
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_crc.c
+Invoking: MCU GCC Compiler
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_adc_ex.c
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+ 
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_crc.d" -MT"HAL_Driver/Src/stm32f1xx_hal_crc.o" -o "HAL_Driver/Src/stm32f1xx_hal_crc.o" "../HAL_Driver/Src/stm32f1xx_hal_crc.c"
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_dac.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_cec.c
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_dac.d" -MT"HAL_Driver/Src/stm32f1xx_hal_dac.o" -o "HAL_Driver/Src/stm32f1xx_hal_dac.o" "../HAL_Driver/Src/stm32f1xx_hal_dac.c"
+ 
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_cortex.c
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_dac_ex.c
+ 
+Invoking: MCU GCC Compiler
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_dma.c
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_dac_ex.d" -MT"HAL_Driver/Src/stm32f1xx_hal_dac_ex.o" -o "HAL_Driver/Src/stm32f1xx_hal_dac_ex.o" "../HAL_Driver/Src/stm32f1xx_hal_dac_ex.c"
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_dma.d" -MT"HAL_Driver/Src/stm32f1xx_hal_dma.o" -o "HAL_Driver/Src/stm32f1xx_hal_dma.o" "../HAL_Driver/Src/stm32f1xx_hal_dma.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_crc.c
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_eth.c
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_dac.c
+Invoking: MCU GCC Compiler
+ 
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_flash.c
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_eth.d" -MT"HAL_Driver/Src/stm32f1xx_hal_eth.o" -o "HAL_Driver/Src/stm32f1xx_hal_eth.o" "../HAL_Driver/Src/stm32f1xx_hal_eth.c"
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_flash.d" -MT"HAL_Driver/Src/stm32f1xx_hal_flash.o" -o "HAL_Driver/Src/stm32f1xx_hal_flash.o" "../HAL_Driver/Src/stm32f1xx_hal_flash.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_dac_ex.c
+ 
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_dma.c
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_flash_ex.c
+Invoking: MCU GCC Compiler
+ 
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_gpio.c
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_flash_ex.d" -MT"HAL_Driver/Src/stm32f1xx_hal_flash_ex.o" -o "HAL_Driver/Src/stm32f1xx_hal_flash_ex.o" "../HAL_Driver/Src/stm32f1xx_hal_flash_ex.c"
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_gpio.d" -MT"HAL_Driver/Src/stm32f1xx_hal_gpio.o" -o "HAL_Driver/Src/stm32f1xx_hal_gpio.o" "../HAL_Driver/Src/stm32f1xx_hal_gpio.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_eth.c
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c
+Invoking: MCU GCC Compiler
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_flash.c
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_gpio_ex.d" -MT"HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o" -o "HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o" "../HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c"
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_hcd.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_hcd.d" -MT"HAL_Driver/Src/stm32f1xx_hal_hcd.o" -o "HAL_Driver/Src/stm32f1xx_hal_hcd.o" "../HAL_Driver/Src/stm32f1xx_hal_hcd.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_flash_ex.c
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_i2c.c
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_gpio.c
+Invoking: MCU GCC Compiler
+ 
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_i2s.c
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_i2c.d" -MT"HAL_Driver/Src/stm32f1xx_hal_i2c.o" -o "HAL_Driver/Src/stm32f1xx_hal_i2c.o" "../HAL_Driver/Src/stm32f1xx_hal_i2c.c"
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_i2s.d" -MT"HAL_Driver/Src/stm32f1xx_hal_i2s.o" -o "HAL_Driver/Src/stm32f1xx_hal_i2s.o" "../HAL_Driver/Src/stm32f1xx_hal_i2s.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_irda.c
+Invoking: MCU GCC Compiler
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_hcd.c
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_irda.d" -MT"HAL_Driver/Src/stm32f1xx_hal_irda.o" -o "HAL_Driver/Src/stm32f1xx_hal_irda.o" "../HAL_Driver/Src/stm32f1xx_hal_irda.c"
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_iwdg.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_iwdg.d" -MT"HAL_Driver/Src/stm32f1xx_hal_iwdg.o" -o "HAL_Driver/Src/stm32f1xx_hal_iwdg.o" "../HAL_Driver/Src/stm32f1xx_hal_iwdg.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_i2s.c
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_mmc.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_mmc.d" -MT"HAL_Driver/Src/stm32f1xx_hal_mmc.o" -o "HAL_Driver/Src/stm32f1xx_hal_mmc.o" "../HAL_Driver/Src/stm32f1xx_hal_mmc.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_i2c.c
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_msp_template.c
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_irda.c
+Invoking: MCU GCC Compiler
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_iwdg.c
+ 
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_msp_template.d" -MT"HAL_Driver/Src/stm32f1xx_hal_msp_template.o" -o "HAL_Driver/Src/stm32f1xx_hal_msp_template.o" "../HAL_Driver/Src/stm32f1xx_hal_msp_template.c"
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_nand.c
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_nor.c
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_nand.d" -MT"HAL_Driver/Src/stm32f1xx_hal_nand.o" -o "HAL_Driver/Src/stm32f1xx_hal_nand.o" "../HAL_Driver/Src/stm32f1xx_hal_nand.c"
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_nor.d" -MT"HAL_Driver/Src/stm32f1xx_hal_nor.o" -o "HAL_Driver/Src/stm32f1xx_hal_nor.o" "../HAL_Driver/Src/stm32f1xx_hal_nor.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_mmc.c
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_pccard.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_pccard.d" -MT"HAL_Driver/Src/stm32f1xx_hal_pccard.o" -o "HAL_Driver/Src/stm32f1xx_hal_pccard.o" "../HAL_Driver/Src/stm32f1xx_hal_pccard.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_msp_template.c
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_pcd.c
+Invoking: MCU GCC Compiler
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_nand.c
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_nor.c
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+ 
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_pcd.d" -MT"HAL_Driver/Src/stm32f1xx_hal_pcd.o" -o "HAL_Driver/Src/stm32f1xx_hal_pcd.o" "../HAL_Driver/Src/stm32f1xx_hal_pcd.c"
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_pcd_ex.c
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_pwr.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_pcd_ex.d" -MT"HAL_Driver/Src/stm32f1xx_hal_pcd_ex.o" -o "HAL_Driver/Src/stm32f1xx_hal_pcd_ex.o" "../HAL_Driver/Src/stm32f1xx_hal_pcd_ex.c"
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_pwr.d" -MT"HAL_Driver/Src/stm32f1xx_hal_pwr.o" -o "HAL_Driver/Src/stm32f1xx_hal_pwr.o" "../HAL_Driver/Src/stm32f1xx_hal_pwr.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_pccard.c
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_rcc.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_rcc.d" -MT"HAL_Driver/Src/stm32f1xx_hal_rcc.o" -o "HAL_Driver/Src/stm32f1xx_hal_rcc.o" "../HAL_Driver/Src/stm32f1xx_hal_rcc.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_pcd_ex.c
+ 
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_pcd.c
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_pwr.c
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c
+ 
+ 
+Invoking: MCU GCC Compiler
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_rtc.c
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_rtc_ex.c
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_rcc_ex.d" -MT"HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o" -o "HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o" "../HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c"
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_rtc.d" -MT"HAL_Driver/Src/stm32f1xx_hal_rtc.o" -o "HAL_Driver/Src/stm32f1xx_hal_rtc.o" "../HAL_Driver/Src/stm32f1xx_hal_rtc.c"
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_rtc_ex.d" -MT"HAL_Driver/Src/stm32f1xx_hal_rtc_ex.o" -o "HAL_Driver/Src/stm32f1xx_hal_rtc_ex.o" "../HAL_Driver/Src/stm32f1xx_hal_rtc_ex.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_rcc.c
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_sd.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_sd.d" -MT"HAL_Driver/Src/stm32f1xx_hal_sd.o" -o "HAL_Driver/Src/stm32f1xx_hal_sd.o" "../HAL_Driver/Src/stm32f1xx_hal_sd.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_rtc_ex.c
+ 
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_smartcard.c
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_rtc.c
+Invoking: MCU GCC Compiler
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_spi.c
+ 
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_smartcard.d" -MT"HAL_Driver/Src/stm32f1xx_hal_smartcard.o" -o "HAL_Driver/Src/stm32f1xx_hal_smartcard.o" "../HAL_Driver/Src/stm32f1xx_hal_smartcard.c"
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_spi_ex.c
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_spi.d" -MT"HAL_Driver/Src/stm32f1xx_hal_spi.o" -o "HAL_Driver/Src/stm32f1xx_hal_spi.o" "../HAL_Driver/Src/stm32f1xx_hal_spi.c"
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_spi_ex.d" -MT"HAL_Driver/Src/stm32f1xx_hal_spi_ex.o" -o "HAL_Driver/Src/stm32f1xx_hal_spi_ex.o" "../HAL_Driver/Src/stm32f1xx_hal_spi_ex.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_sd.c
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_sram.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_sram.d" -MT"HAL_Driver/Src/stm32f1xx_hal_sram.o" -o "HAL_Driver/Src/stm32f1xx_hal_sram.o" "../HAL_Driver/Src/stm32f1xx_hal_sram.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_spi_ex.c
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_smartcard.c
+ 
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_tim.c
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_tim_ex.c
+Invoking: MCU GCC Compiler
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_spi.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_tim.d" -MT"HAL_Driver/Src/stm32f1xx_hal_tim.o" -o "HAL_Driver/Src/stm32f1xx_hal_tim.o" "../HAL_Driver/Src/stm32f1xx_hal_tim.c"
+ 
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_tim_ex.d" -MT"HAL_Driver/Src/stm32f1xx_hal_tim_ex.o" -o "HAL_Driver/Src/stm32f1xx_hal_tim_ex.o" "../HAL_Driver/Src/stm32f1xx_hal_tim_ex.c"
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_uart.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_uart.d" -MT"HAL_Driver/Src/stm32f1xx_hal_uart.o" -o "HAL_Driver/Src/stm32f1xx_hal_uart.o" "../HAL_Driver/Src/stm32f1xx_hal_uart.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_sram.c
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_usart.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_usart.d" -MT"HAL_Driver/Src/stm32f1xx_hal_usart.o" -o "HAL_Driver/Src/stm32f1xx_hal_usart.o" "../HAL_Driver/Src/stm32f1xx_hal_usart.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_tim_ex.c
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_hal_wwdg.c
+Invoking: MCU GCC Compiler
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_uart.c
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+ 
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_hal_wwdg.d" -MT"HAL_Driver/Src/stm32f1xx_hal_wwdg.o" -o "HAL_Driver/Src/stm32f1xx_hal_wwdg.o" "../HAL_Driver/Src/stm32f1xx_hal_wwdg.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_tim.c
+Building file: ../HAL_Driver/Src/stm32f1xx_ll_adc.c
+ 
+Invoking: MCU GCC Compiler
+Building file: ../HAL_Driver/Src/stm32f1xx_ll_crc.c
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_ll_adc.d" -MT"HAL_Driver/Src/stm32f1xx_ll_adc.o" -o "HAL_Driver/Src/stm32f1xx_ll_adc.o" "../HAL_Driver/Src/stm32f1xx_ll_adc.c"
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_ll_crc.d" -MT"HAL_Driver/Src/stm32f1xx_ll_crc.o" -o "HAL_Driver/Src/stm32f1xx_ll_crc.o" "../HAL_Driver/Src/stm32f1xx_ll_crc.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_usart.c
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_ll_dac.c
+Finished building: ../HAL_Driver/Src/stm32f1xx_ll_adc.c
+Invoking: MCU GCC Compiler
+ 
+Finished building: ../HAL_Driver/Src/stm32f1xx_ll_crc.c
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+ 
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_ll_dac.d" -MT"HAL_Driver/Src/stm32f1xx_ll_dac.o" -o "HAL_Driver/Src/stm32f1xx_ll_dac.o" "../HAL_Driver/Src/stm32f1xx_ll_dac.c"
+Building file: ../HAL_Driver/Src/stm32f1xx_ll_dma.c
+Building file: ../HAL_Driver/Src/stm32f1xx_ll_exti.c
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_ll_dma.d" -MT"HAL_Driver/Src/stm32f1xx_ll_dma.o" -o "HAL_Driver/Src/stm32f1xx_ll_dma.o" "../HAL_Driver/Src/stm32f1xx_ll_dma.c"
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_ll_exti.d" -MT"HAL_Driver/Src/stm32f1xx_ll_exti.o" -o "HAL_Driver/Src/stm32f1xx_ll_exti.o" "../HAL_Driver/Src/stm32f1xx_ll_exti.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_ll_dac.c
+Finished building: ../HAL_Driver/Src/stm32f1xx_hal_wwdg.c
+ 
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_ll_fsmc.c
+Building file: ../HAL_Driver/Src/stm32f1xx_ll_gpio.c
+Finished building: ../HAL_Driver/Src/stm32f1xx_ll_dma.c
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+ 
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+Finished building: ../HAL_Driver/Src/stm32f1xx_ll_exti.c
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_ll_fsmc.d" -MT"HAL_Driver/Src/stm32f1xx_ll_fsmc.o" -o "HAL_Driver/Src/stm32f1xx_ll_fsmc.o" "../HAL_Driver/Src/stm32f1xx_ll_fsmc.c"
+Building file: ../HAL_Driver/Src/stm32f1xx_ll_i2c.c
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_ll_gpio.d" -MT"HAL_Driver/Src/stm32f1xx_ll_gpio.o" -o "HAL_Driver/Src/stm32f1xx_ll_gpio.o" "../HAL_Driver/Src/stm32f1xx_ll_gpio.c"
+ 
+Invoking: MCU GCC Compiler
+Building file: ../HAL_Driver/Src/stm32f1xx_ll_pwr.c
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_ll_i2c.d" -MT"HAL_Driver/Src/stm32f1xx_ll_i2c.o" -o "HAL_Driver/Src/stm32f1xx_ll_i2c.o" "../HAL_Driver/Src/stm32f1xx_ll_i2c.c"
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_ll_pwr.d" -MT"HAL_Driver/Src/stm32f1xx_ll_pwr.o" -o "HAL_Driver/Src/stm32f1xx_ll_pwr.o" "../HAL_Driver/Src/stm32f1xx_ll_pwr.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_ll_gpio.c
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_ll_rcc.c
+Finished building: ../HAL_Driver/Src/stm32f1xx_ll_i2c.c
+Finished building: ../HAL_Driver/Src/stm32f1xx_ll_pwr.c
+Invoking: MCU GCC Compiler
+ 
+ 
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+Building file: ../HAL_Driver/Src/stm32f1xx_ll_rtc.c
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_ll_rcc.d" -MT"HAL_Driver/Src/stm32f1xx_ll_rcc.o" -o "HAL_Driver/Src/stm32f1xx_ll_rcc.o" "../HAL_Driver/Src/stm32f1xx_ll_rcc.c"
+Building file: ../HAL_Driver/Src/stm32f1xx_ll_sdmmc.c
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_ll_rtc.d" -MT"HAL_Driver/Src/stm32f1xx_ll_rtc.o" -o "HAL_Driver/Src/stm32f1xx_ll_rtc.o" "../HAL_Driver/Src/stm32f1xx_ll_rtc.c"
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_ll_sdmmc.d" -MT"HAL_Driver/Src/stm32f1xx_ll_sdmmc.o" -o "HAL_Driver/Src/stm32f1xx_ll_sdmmc.o" "../HAL_Driver/Src/stm32f1xx_ll_sdmmc.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_ll_fsmc.c
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_ll_spi.c
+Invoking: MCU GCC Compiler
+Finished building: ../HAL_Driver/Src/stm32f1xx_ll_rcc.c
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+ 
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_ll_spi.d" -MT"HAL_Driver/Src/stm32f1xx_ll_spi.o" -o "HAL_Driver/Src/stm32f1xx_ll_spi.o" "../HAL_Driver/Src/stm32f1xx_ll_spi.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_ll_rtc.c
+Building file: ../HAL_Driver/Src/stm32f1xx_ll_tim.c
+ 
+Invoking: MCU GCC Compiler
+Building file: ../HAL_Driver/Src/stm32f1xx_ll_usart.c
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_ll_tim.d" -MT"HAL_Driver/Src/stm32f1xx_ll_tim.o" -o "HAL_Driver/Src/stm32f1xx_ll_tim.o" "../HAL_Driver/Src/stm32f1xx_ll_tim.c"
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_ll_usart.d" -MT"HAL_Driver/Src/stm32f1xx_ll_usart.o" -o "HAL_Driver/Src/stm32f1xx_ll_usart.o" "../HAL_Driver/Src/stm32f1xx_ll_usart.c"
+Finished building: ../HAL_Driver/Src/stm32f1xx_ll_spi.c
+ 
+Building file: ../HAL_Driver/Src/stm32f1xx_ll_usb.c
+Invoking: MCU GCC Compiler
+Finished building: ../HAL_Driver/Src/stm32f1xx_ll_tim.c
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+ 
+Finished building: ../HAL_Driver/Src/stm32f1xx_ll_usart.c
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_ll_usb.d" -MT"HAL_Driver/Src/stm32f1xx_ll_usb.o" -o "HAL_Driver/Src/stm32f1xx_ll_usb.o" "../HAL_Driver/Src/stm32f1xx_ll_usb.c"
+Building file: ../HAL_Driver/Src/stm32f1xx_ll_utils.c
+ 
+Finished building: ../HAL_Driver/Src/stm32f1xx_ll_sdmmc.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\BATTERY_DRIVER_REV1\Debug
+ 
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F1 -DSTM32F103RBTx -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/inc" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/device" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/CMSIS/core" -I"C:/git_repo/stm32_forbot/STM32/BATTERY_DRIVER_REV1/HAL_Driver/Inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/stm32f1xx_ll_utils.d" -MT"HAL_Driver/Src/stm32f1xx_ll_utils.o" -o "HAL_Driver/Src/stm32f1xx_ll_utils.o" "../HAL_Driver/Src/stm32f1xx_ll_utils.c"
+Command canceled
+
+10:31:01 Build Cancelled (took 18s.159ms)
+

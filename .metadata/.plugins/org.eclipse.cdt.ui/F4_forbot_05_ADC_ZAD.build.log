@@ -1,0 +1,172 @@
+14:23:44 **** Build of configuration Debug for project F4_forbot_05_ADC_ZAD ****
+make -j4 all 
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c"
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_adc.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_adc.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_adc.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c"
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_adc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_adc_ex.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_adc_ex.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c"
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_cortex.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_cortex.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c"
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
+ 
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c
+ 
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
+ 
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
+Invoking: MCU GCC Compiler
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c"
+ 
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma_ex.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma_ex.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c"
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_exti.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_exti.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c"
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c"
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
+ 
+ 
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
+ 
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash_ex.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash_ex.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c"
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash_ramfunc.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash_ramfunc.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c"
+ 
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_gpio.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_gpio.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c"
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c"
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
+ 
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
+ 
+Invoking: MCU GCC Compiler
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+ 
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr_ex.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr_ex.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c"
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
+Invoking: MCU GCC Compiler
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
+ 
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c"
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc_ex.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc_ex.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c"
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c"
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
+ 
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
+Invoking: MCU GCC Compiler
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim_ex.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim_ex.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c"
+ 
+ 
+ 
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c
+Invoking: MCU GCC Compiler
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Src/system_stm32f4xx.c
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Src/main.c
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_ll_adc.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_ll_adc.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_ll_adc.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c"
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/CMSIS/system_stm32f4xx.d" -MT"Drivers/CMSIS/system_stm32f4xx.o" -o "Drivers/CMSIS/system_stm32f4xx.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Src/system_stm32f4xx.c"
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/Core/main.d" -MT"Application/User/Core/main.o" -o "Application/User/Core/main.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Src/main.c"
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c
+C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Src/main.c: In function 'main':
+C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Src/main.c:113:28: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
+   HAL_ADC_Start_DMA(&hadc1,joystick,3);
+                            ^~~~~~~~
+In file included from C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc/stm32f4xx_hal_conf.h:294:0,
+                 from C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc/main.h:31,
+                 from C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Src/main.c:21:
+C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h:595:19: note: expected 'uint32_t * {aka long unsigned int *}' but argument is of type 'uint16_t * {aka short unsigned int *}'
+ HAL_StatusTypeDef HAL_ADC_Start_DMA(ADC_HandleTypeDef* hadc, uint32_t* pData, uint32_t Length);
+                   ^~~~~~~~~~~~~~~~~
+ 
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Src/stm32f4xx_hal_msp.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/Core/stm32f4xx_hal_msp.d" -MT"Application/User/Core/stm32f4xx_hal_msp.o" -o "Application/User/Core/stm32f4xx_hal_msp.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Src/stm32f4xx_hal_msp.c"
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
+ 
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Src/stm32f4xx_it.c
+Invoking: MCU GCC Compiler
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Src/system_stm32f4xx.c
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+ 
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/Core/stm32f4xx_it.d" -MT"Application/User/Core/stm32f4xx_it.o" -o "Application/User/Core/stm32f4xx_it.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Src/stm32f4xx_it.c"
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/SW4STM32/startup_stm32f411xe.s
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Src/main.c
+Invoking: MCU GCC Assembler
+ 
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -g -o "Application/SW4STM32/startup_stm32f411xe.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/SW4STM32/startup_stm32f411xe.s"
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/SW4STM32/syscalls.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\F4_forbot_05_ADC_ZAD\SW4STM32\F4_forbot_05_ADC_ZAD\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/SW4STM32/syscalls.d" -MT"Application/SW4STM32/syscalls.o" -o "Application/SW4STM32/syscalls.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/SW4STM32/syscalls.c"
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/SW4STM32/startup_stm32f411xe.s
+ 
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Src/stm32f4xx_hal_msp.c
+ 
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/SW4STM32/syscalls.c
+ 
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot_05_ADC_ZAD/Core/Src/stm32f4xx_it.c
+ 
+Building target: F4_forbot_05_ADC_ZAD.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F411VETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "F4_forbot_05_ADC_ZAD.elf" @"objects.list"   -lm
+Finished building target: F4_forbot_05_ADC_ZAD.elf
+ 
+C:/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/make/make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex "F4_forbot_05_ADC_ZAD.elf" "F4_forbot_05_ADC_ZAD.hex"
+arm-none-eabi-size "F4_forbot_05_ADC_ZAD.elf"
+   text	   data	    bss	    dec	    hex	filename
+   8744	     20	   1748	  10512	   2910	F4_forbot_05_ADC_ZAD.elf
+ 
+
+14:23:51 Build Finished (took 6s.985ms)
+

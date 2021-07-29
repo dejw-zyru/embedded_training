@@ -1,0 +1,6 @@
+13:44:58 **** Incremental Build of configuration Debug for project F4_forbot4_GPIO_1 ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+
+13:44:59 Build Finished (took 287ms)
+
