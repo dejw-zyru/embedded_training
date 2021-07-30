@@ -42,3 +42,27 @@ Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING
 
 !ENTRY org.eclipse.cdt.core 1 0 2021-07-29 20:18:25.543
 !MESSAGE Indexed 'F4_forbot_05_ADC_ZAD' (23 sources, 84 headers) in 1,16 sec: 4 495 declarations; 22 986 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-07-30 12:49:43.163
+!MESSAGE Indexed 'F4_forbot_06_COUNTERS' (20 sources, 82 headers) in 1,38 sec: 5 135 declarations; 33 560 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.launchbar.core 2 0 2021-07-30 13:18:11.666
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2021-07-30 13:18:11.674
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.core.resources 4 372 2021-07-30 13:18:11.721
+!MESSAGE Resource '/F4_forbot_05_ADC_ZAD' is not open.
+
+!ENTRY org.eclipse.core.resources 4 372 2021-07-30 13:18:11.784
+!MESSAGE Resource '/F4_forbot_GPIO_zad' is not open.
+
+!ENTRY org.eclipse.core.resources 4 372 2021-07-30 13:18:11.789
+!MESSAGE Resource '/RemoteSystemsTempFiles' is not open.
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-07-30 15:26:44.998
+!MESSAGE Indexed 'F4_forbot_06_COUNTERS_06_ZAD' (23 sources, 83 headers) in 1,34 sec: 4 491 declarations; 22 833 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-07-30 21:11:03.471
+!MESSAGE Indexed 'F4_forbot_06_COUNTERS_06_ZAD' (23 sources, 85 headers) in 1,37 sec: 5 692 declarations; 39 237 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)
