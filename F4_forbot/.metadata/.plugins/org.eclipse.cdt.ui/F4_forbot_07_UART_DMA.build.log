@@ -1,0 +1,6 @@
+12:09:47 **** Incremental Build of configuration Debug for project F4_forbot_07_UART_DMA ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+
+12:09:47 Build Finished (took 346ms)
+

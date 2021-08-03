@@ -20,6 +20,8 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
+//zadanie sterowanie joystickiem na ledkach + alarm sterowany timerem
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -59,6 +61,7 @@ static void MX_GPIO_Init(void);
 static void MX_DMA_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_TIM10_Init(void);
+
 /* USER CODE BEGIN PFP */
 
 void AlarmFunction(void);

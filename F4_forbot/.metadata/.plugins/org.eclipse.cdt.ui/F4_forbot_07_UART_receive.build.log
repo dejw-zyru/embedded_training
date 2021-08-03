@@ -1,0 +1,54 @@
+13:38:49 **** Incremental Build of configuration Debug for project F4_forbot_07_UART_receive ****
+make -j4 all 
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Core/Src/main.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\F4_forbot\F4_forbot_07_UART_receive\SW4STM32\F4_forbot_07_UART_receive\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/Core/main.d" -MT"Application/User/Core/main.o" -o "Application/User/Core/main.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Core/Src/main.c"
+C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Core/Src/main.c:97:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  size = sprintf(Data, "Odebrano nieznany znak:  %s\n\r", Received);
+         ^~~~~~~
+C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Core/Src/main.c:97:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Core/Src/main.c:97:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Core/Src/main.c:97:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  size = sprintf(Data, "Odebrano nieznany znak:  %s\n\r", Received);
+                 ^~~~
+C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Core/Src/main.c:97:17: note: expected 'char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Core/Src/main.c:102:30: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  HAL_UART_Receive_IT(&huart1,&Received,10); //Ponowne w³aczenie nas³uchiwania
+                              ^
+In file included from C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Core/Inc/stm32f4xx_hal_conf.h:406:0,
+                 from C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Core/Inc/main.h:31,
+                 from C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Core/Src/main.c:21:
+C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:724:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t (*)[10] {aka unsigned char (*)[10]}'
+ HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^~~~~~~~~~~~~~~~~~~
+C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Core/Src/main.c: In function 'main':
+C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Core/Src/main.c:152:32: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+   HAL_UART_Receive_IT(&huart1, &Received,10);
+                                ^
+In file included from C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Core/Inc/stm32f4xx_hal_conf.h:406:0,
+                 from C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Core/Inc/main.h:31,
+                 from C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Core/Src/main.c:21:
+C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:724:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t (*)[10] {aka unsigned char (*)[10]}'
+ HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^~~~~~~~~~~~~~~~~~~
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_07_UART_receive/Core/Src/main.c
+ 
+Building target: F4_forbot_07_UART_receive.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F411VETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "F4_forbot_07_UART_receive.elf" @"objects.list"   -lm
+Finished building target: F4_forbot_07_UART_receive.elf
+ 
+C:/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/make/make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex "F4_forbot_07_UART_receive.elf" "F4_forbot_07_UART_receive.hex"
+arm-none-eabi-size "F4_forbot_07_UART_receive.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9460	    120	   1744	  11324	   2c3c	F4_forbot_07_UART_receive.elf
+ 
+
+13:38:51 Build Finished (took 1s.720ms)
+
