@@ -1,0 +1,23 @@
+08:14:02 **** Incremental Build of configuration Debug for project F4_forbot_08_PWM_DMA_LED ****
+make -j4 all 
+Building file: C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_08_PWM_DMA_LED/F4_forbot_08_PWM_DMA_LED/Core/Src/main.c
+Invoking: MCU GCC Compiler
+C:\git_repo\stm32_forbot\STM32\F4_forbot\F4_forbot_08_PWM_DMA_LED\F4_forbot_08_PWM_DMA_LED\SW4STM32\F4_forbot_08_PWM_DMA_LED\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_08_PWM_DMA_LED/F4_forbot_08_PWM_DMA_LED/Core/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_08_PWM_DMA_LED/F4_forbot_08_PWM_DMA_LED/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_08_PWM_DMA_LED/F4_forbot_08_PWM_DMA_LED/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_08_PWM_DMA_LED/F4_forbot_08_PWM_DMA_LED/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_08_PWM_DMA_LED/F4_forbot_08_PWM_DMA_LED/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/Core/main.d" -MT"Application/User/Core/main.o" -o "Application/User/Core/main.o" "C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_08_PWM_DMA_LED/F4_forbot_08_PWM_DMA_LED/Core/Src/main.c"
+Finished building: C:/git_repo/stm32_forbot/STM32/F4_forbot/F4_forbot_08_PWM_DMA_LED/F4_forbot_08_PWM_DMA_LED/Core/Src/main.c
+ 
+Building target: F4_forbot_08_PWM_DMA_LED.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F411VETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "F4_forbot_08_PWM_DMA_LED.elf" @"objects.list"   -lm
+Finished building target: F4_forbot_08_PWM_DMA_LED.elf
+ 
+C:/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/make/make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex "F4_forbot_08_PWM_DMA_LED.elf" "F4_forbot_08_PWM_DMA_LED.hex"
+arm-none-eabi-size "F4_forbot_08_PWM_DMA_LED.elf"
+   text	   data	    bss	    dec	    hex	filename
+   7952	     24	   1744	   9720	   25f8	F4_forbot_08_PWM_DMA_LED.elf
+ 
+
+08:14:04 Build Finished (took 1s.976ms)
+

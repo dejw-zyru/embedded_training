@@ -12,6 +12,9 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\git_repo\forbot_solution\TIMER_ADVANCED\05_PWM"/>
+			<item value="C:\git_repo\stm32_forbot\STM32\F4_forbot\F4_forbot_08_PWM_DMA_LED"/>
+			<item value="C:\git_repo\stm32_forbot\STM32\F4_forbot\F4_forbot_08_PWM"/>
 			<item value="C:\git_repo\stm32_forbot\STM32\F4_forbot\F4_forbot_07_UART_DMA"/>
 			<item value="C:\git_repo\stm32_forbot\STM32\F4_forbot\F4_forbot_07_UART_ZAD"/>
 			<item value="C:\git_repo\stm32_forbot\STM32\F4_forbot\F4_forbot_07_UART_receive"/>
