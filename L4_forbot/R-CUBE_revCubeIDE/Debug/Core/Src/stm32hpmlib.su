@@ -1,0 +1,15 @@
+stm32hpmlib.c:55:16:hpmCalculateChecksum	24	static
+stm32hpmlib.c:67:21:hpmUartTx	16	static
+stm32hpmlib.c:75:21:hpmUartRx	24	static
+stm32hpmlib.c:85:12:hpmSendCommand	288	static
+stm32hpmlib.c:114:20:hpmGetSimpleAckResponse	16	static
+stm32hpmlib.c:131:20:hpmGetComplexAckResponse	64	static
+stm32hpmlib.c:187:5:hpmSetUart	16	static
+stm32hpmlib.c:195:5:hpmReadResults	32	static
+stm32hpmlib.c:229:5:hpmStartParticleMeasurement	16	static
+stm32hpmlib.c:247:5:hpmStopParticleMeasurement	16	static
+stm32hpmlib.c:265:5:hpmSetAdjustmentCooeff	24	static
+stm32hpmlib.c:284:5:hpmReadAdjustmentCooeff	32	static
+stm32hpmlib.c:313:5:hpmStopAutoSend	16	static
+stm32hpmlib.c:331:5:hpmEnableAutoSend	16	static
+stm32hpmlib.c:348:5:hpmSetup	8	static
