@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration.internal">
-		<item value="180" key="size.height"/>
-		<item value="512" key="size.width"/>
+		<item key="size.height" value="180"/>
+		<item key="size.width" value="512"/>
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
 	</section>
 	<section name="PDOMSearchPage">
-		<item value="false" key="caseSensitive"/>
-		<item value="227191" key="searchFlags"/>
+		<item key="caseSensitive" value="false"/>
+		<item key="searchFlags" value="227191"/>
 		<list key="previousPatterns">
 			<item value="callback*weak"/>
 			<item value="SYSTICK_Callback"/>

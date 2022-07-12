@@ -1,31 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="CleanDialogSettings">
-		<item value="662" key="DIALOG_WIDTH"/>
-		<item value="true" key="TOGGLE_SELECTED"/>
-		<item value="423" key="DIALOG_HEIGHT"/>
-		<item value="3669" key="DIALOG_X_ORIGIN"/>
-		<item value="164" key="DIALOG_Y_ORIGIN"/>
+		<item key="DIALOG_WIDTH" value="662"/>
+		<item key="TOGGLE_SELECTED" value="true"/>
+		<item key="DIALOG_HEIGHT" value="423"/>
+		<item key="DIALOG_X_ORIGIN" value="3669"/>
+		<item key="DIALOG_Y_ORIGIN" value="164"/>
 	</section>
 	<section name="ExternalProjectImportWizard">
-		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
-		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
-		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
-		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
-			<item value="C:\git_repo\forbot_solution\TIMER_ADVANCED\05_PWM"/>
-			<item value="C:\git_repo\stm32_forbot\STM32\F4_forbot\F4_forbot_08_PWM_DMA_LED"/>
-			<item value="C:\git_repo\stm32_forbot\STM32\F4_forbot\F4_forbot_08_PWM"/>
-			<item value="C:\git_repo\stm32_forbot\STM32\F4_forbot\F4_forbot_07_UART_DMA"/>
-			<item value="C:\git_repo\stm32_forbot\STM32\F4_forbot\F4_forbot_07_UART_ZAD"/>
-			<item value="C:\git_repo\stm32_forbot\STM32\F4_forbot\F4_forbot_07_UART_receive"/>
-			<item value="C:\git_repo\stm32_forbot\STM32\F4_forbot\F4_forbot_07_UART"/>
-			<item value="C:\git_repo\stm32_forbot\STM32\F4_forbot\F4_forbot_06_COUNTERS_06_ZAD"/>
-			<item value="C:\git_repo\stm32_forbot\STM32\F4_forbot\F4_forbot_06_COUNTERS"/>
-			<item value="C:\git_repo\stm32_forbot\STM32\F4_forbot\F4_forbot_GPIO_zad"/>
-			<item value="C:\git_repo\stm32_forbot\STM32\F4_forbot\F4_forbot_05_ADC_ZAD"/>
-		</list>
-		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
-			<item value=""/>
-		</list>
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="true"/>
+	</section>
+	<section name="NewWizardAction">
 	</section>
 </section>
