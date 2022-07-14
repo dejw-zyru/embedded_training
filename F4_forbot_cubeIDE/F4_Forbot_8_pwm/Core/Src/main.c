@@ -22,6 +22,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+//!!!!!!!!!!!!!!!!!!!!!!!!!! TUTAJ MIELISMY JAKIS PROBLEM Z WYWOÅ?ANIEM PRZERWANIA OD SYSTICKA CALLBACK'A
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -51,6 +53,32 @@ static void MX_GPIO_Init(void);
 static void MX_TIM4_Init(void);
 /* USER CODE BEGIN PFP */
 
+//Przerwanie wywolywane z czestotliwoscia 1KHz
+void przerwanie(void) {
+	static uint8_t InterruptPrescaler = 0; // licznik przerwan
+	static uint8_t CzyRosnie = 1; // Flaga kierunku zliczania
+	static uint16_t Duty = 0;
+
+	++InterruptPrescaler; // Inkrementacja numeru przerwania
+
+	// Jezeli wywolalo sie 40 przerwanie z rzedu
+	if (InterruptPrescaler == 40) {
+		InterruptPrescaler = 0; // wyzeruj licznik przerwan
+
+		if (Duty == 100) // Jezeli wypelnienie jest rowne 100
+			CzyRosnie = 0; // Zmien kierunek zliczania w dol
+
+		else if (Duty == 0) // Jezeli wypelnienie rowne 0
+			CzyRosnie = 1; // Zmien kierunek zliczania w gore
+
+		if (CzyRosnie) // Jezeli zliczamy w gore
+			++Duty; // Inkrementuj wartosc wypelnienia
+		else//Jezeli zliczamy w dol
+			--Duty; // Dekrementuj wartosc wypelnienia
+	}
+	TIM4->CCR3 = Duty; // Wstawienie wyliczonej wartosci wypelnienia do
+	// rejestru timera odpowiedzialnego za wypelnienie generowanego sygnalu PWM
+}
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -88,7 +116,7 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
-
+  HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_3);// Uruchamia generowanie PWM przez timer 4 na kanale 3
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -168,9 +196,9 @@ static void MX_TIM4_Init(void)
 
   /* USER CODE END TIM4_Init 1 */
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 0;
+  htim4.Init.Prescaler = 4999;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim4.Init.Period = 65535;
+  htim4.Init.Period = 99;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim4) != HAL_OK)

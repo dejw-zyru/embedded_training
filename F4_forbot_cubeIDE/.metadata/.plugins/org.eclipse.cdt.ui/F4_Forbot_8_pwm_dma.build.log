@@ -1,0 +1,10 @@
+16:54:36 **** Incremental Build of configuration Debug for project F4_Forbot_8_pwm_dma ****
+make -j16 all 
+arm-none-eabi-size   F4_Forbot_8_pwm_dma.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12264	     24	   1744	  14032	   36d0	F4_Forbot_8_pwm_dma.elf
+Finished building: default.size.stdout
+ 
+
+16:54:36 Build Finished. 0 errors, 0 warnings. (took 233ms)
+
