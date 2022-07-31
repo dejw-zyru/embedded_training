@@ -1,4 +1,4 @@
-00:27:23 **** Incremental Build of configuration Debug for project nucleo-l476rg-tmp102-digikey ****
+16:23:22 **** Incremental Build of configuration Debug for project nucleo-l476rg-tmp102-digikey ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "nucleo-l476rg-tmp102-digikey.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Development\embedded\embedded_training\L4_forbot\nucleo-l476rg-tmp102-digikey\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="nucleo-l476rg-tmp102-digikey.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -8,17 +8,17 @@ arm-none-eabi-size   nucleo-l476rg-tmp102-digikey.elf
 arm-none-eabi-objdump -h -S  nucleo-l476rg-tmp102-digikey.elf  > "nucleo-l476rg-tmp102-digikey.list"
 arm-none-eabi-objcopy  -O binary  nucleo-l476rg-tmp102-digikey.elf  "nucleo-l476rg-tmp102-digikey.bin"
    text	   data	    bss	    dec	    hex	filename
-  13344	     20	   1788	  15152	   3b30	nucleo-l476rg-tmp102-digikey.elf
+  19988	    120	   1816	  21924	   55a4	nucleo-l476rg-tmp102-digikey.elf
 Finished building: default.size.stdout
  
 Finished building: nucleo-l476rg-tmp102-digikey.bin
 Finished building: nucleo-l476rg-tmp102-digikey.list
  
  
-00:28:42 **** Incremental Build of configuration Debug for project nucleo-l476rg-tmp102-digikey ****
+16:23:31 **** Incremental Build of configuration Debug for project nucleo-l476rg-tmp102-digikey ****
 make -j12 all 
 arm-none-eabi-size   nucleo-l476rg-tmp102-digikey.elf 
    text	   data	    bss	    dec	    hex	filename
-  13344	     20	   1788	  15152	   3b30	nucleo-l476rg-tmp102-digikey.elf
+  19988	    120	   1816	  21924	   55a4	nucleo-l476rg-tmp102-digikey.elf
 Finished building: default.size.stdout
  
