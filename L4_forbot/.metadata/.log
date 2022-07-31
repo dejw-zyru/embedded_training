@@ -2990,3 +2990,51 @@ Remote communication error.  Target disconnected.: Nie mo¿na nawi¹zaæ po³¹c
 java.lang.Exception: Remote communication error.  Target disconnected.: Nie mo¿na nawi¹zaæ po³¹czenia, poniewa¿ komputer docelowy aktywnie go odmawia.
 	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1014)
 	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:843)
+!SESSION 2022-07-24 10:53:12.356 -----------------------------------------------
+eclipse.buildId=Version 1.8.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pl_PL
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-07-24 10:53:32.699
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-07-24 10:53:32.943
+!MESSAGE Log4j initialized with config file D:\Development\embedded\embedded_training\L4_forbot\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-07-24 10:53:52.653
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2022-07-25 20:58:37.260 -----------------------------------------------
+eclipse.buildId=Version 1.8.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pl_PL
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-07-25 21:45:45.422
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-07-25 21:45:45.659
+!MESSAGE Log4j initialized with config file D:\Development\embedded\embedded_training\L4_forbot\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-07-25 21:46:02.719
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2022-07-30 17:17:22.975 -----------------------------------------------
+eclipse.buildId=Version 1.8.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pl_PL
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-07-30 17:19:01.497
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-07-30 17:19:01.804
+!MESSAGE Log4j initialized with config file D:\Development\embedded\embedded_training\L4_forbot\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-07-30 17:19:24.884
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-07-30 17:25:44.851
+!MESSAGE Indexed 'nucleo-l476rg-tmp102-digikey' (25 sources, 84 headers) in 6.78 sec: 6,234 declarations; 39,157 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0044%)
