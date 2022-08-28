@@ -27,9 +27,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr_ex.h \
  ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_uart.h \
  ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_uart_ex.h \
- ../Core/Inc/usart.h ../Core/Inc/main.h ../Core/Inc/gpio.h \
- ../Core/Inc/printf.h ../Core/Inc/usart.h ../Core/Inc/stm32hpmlib.h \
- ../Core/Inc/stm32_tm1637.h
+ ../Core/Inc/i2c.h ../Core/Inc/main.h ../Core/Inc/usart.h \
+ ../Core/Inc/gpio.h ../Core/Inc/printf.h ../Core/Inc/usart.h \
+ ../Core/Inc/stm32hpmlib.h ../Core/Inc/stm32_tm1637.h ../Core/Inc/shtc1.h \
+ ../Core/Inc/sensirion_arch_config.h ../Core/Inc/sensirion_i2c.h \
+ ../Core/Inc/sht_git_version.h
 
 ../Core/Inc/main.h:
 
@@ -89,9 +91,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_uart_ex.h:
 
-../Core/Inc/usart.h:
+../Core/Inc/i2c.h:
 
 ../Core/Inc/main.h:
+
+../Core/Inc/usart.h:
 
 ../Core/Inc/gpio.h:
 
@@ -102,3 +106,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/stm32hpmlib.h:
 
 ../Core/Inc/stm32_tm1637.h:
+
+../Core/Inc/shtc1.h:
+
+../Core/Inc/sensirion_arch_config.h:
+
+../Core/Inc/sensirion_i2c.h:
+
+../Core/Inc/sht_git_version.h:

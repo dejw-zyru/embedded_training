@@ -1,0 +1,5 @@
+sensirion_hw_i2c_implementation.c:47:6:sensirion_i2c_init	8	static
+sensirion_hw_i2c_implementation.c:84:6:sensirion_i2c_release	8	static
+sensirion_hw_i2c_implementation.c:97:8:sensirion_i2c_read	32	static
+sensirion_hw_i2c_implementation.c:113:8:sensirion_i2c_write	32	static
+sensirion_hw_i2c_implementation.c:125:6:sensirion_sleep_usec	24	static

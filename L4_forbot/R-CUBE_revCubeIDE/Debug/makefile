@@ -60,8 +60,8 @@ all: main-build
 main-build: R-CUBE_revCubeIDE.elf secondary-outputs
 
 # Tool invocations
-R-CUBE_revCubeIDE.elf: $(OBJS) $(USER_OBJS) D:\Development\embedded\STM32L4_forbot\R-CUBE_revCubeIDE\STM32L051K8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "R-CUBE_revCubeIDE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"D:\Development\embedded\STM32L4_forbot\R-CUBE_revCubeIDE\STM32L051K8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="R-CUBE_revCubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+R-CUBE_revCubeIDE.elf: $(OBJS) $(USER_OBJS) D:\Development\embedded\embedded_training\L4_forbot\R-CUBE_revCubeIDE\STM32L051K8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "R-CUBE_revCubeIDE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"D:\Development\embedded\embedded_training\L4_forbot\R-CUBE_revCubeIDE\STM32L051K8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="R-CUBE_revCubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

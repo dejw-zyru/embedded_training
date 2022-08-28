@@ -6,8 +6,13 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Core/Src/gpio.c \
+../Core/Src/i2c.c \
 ../Core/Src/main.c \
 ../Core/Src/printf.c \
+../Core/Src/sensirion_common.c \
+../Core/Src/sensirion_hw_i2c_implementation.c \
+../Core/Src/sht_git_version.c \
+../Core/Src/shtc1.c \
 ../Core/Src/stm32_tm1637.c \
 ../Core/Src/stm32hpmlib.c \
 ../Core/Src/stm32l0xx_hal_msp.c \
@@ -19,8 +24,13 @@ C_SRCS += \
 
 OBJS += \
 ./Core/Src/gpio.o \
+./Core/Src/i2c.o \
 ./Core/Src/main.o \
 ./Core/Src/printf.o \
+./Core/Src/sensirion_common.o \
+./Core/Src/sensirion_hw_i2c_implementation.o \
+./Core/Src/sht_git_version.o \
+./Core/Src/shtc1.o \
 ./Core/Src/stm32_tm1637.o \
 ./Core/Src/stm32hpmlib.o \
 ./Core/Src/stm32l0xx_hal_msp.o \
@@ -32,8 +42,13 @@ OBJS += \
 
 C_DEPS += \
 ./Core/Src/gpio.d \
+./Core/Src/i2c.d \
 ./Core/Src/main.d \
 ./Core/Src/printf.d \
+./Core/Src/sensirion_common.d \
+./Core/Src/sensirion_hw_i2c_implementation.d \
+./Core/Src/sht_git_version.d \
+./Core/Src/shtc1.d \
 ./Core/Src/stm32_tm1637.d \
 ./Core/Src/stm32hpmlib.d \
 ./Core/Src/stm32l0xx_hal_msp.d \
@@ -51,7 +66,7 @@ Core/Src/%.o: ../Core/Src/%.c Core/Src/subdir.mk
 clean: clean-Core-2f-Src
 
 clean-Core-2f-Src:
-	-$(RM) ./Core/Src/gpio.d ./Core/Src/gpio.o ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/printf.d ./Core/Src/printf.o ./Core/Src/stm32_tm1637.d ./Core/Src/stm32_tm1637.o ./Core/Src/stm32hpmlib.d ./Core/Src/stm32hpmlib.o ./Core/Src/stm32l0xx_hal_msp.d ./Core/Src/stm32l0xx_hal_msp.o ./Core/Src/stm32l0xx_it.d ./Core/Src/stm32l0xx_it.o ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/system_stm32l0xx.d ./Core/Src/system_stm32l0xx.o ./Core/Src/usart.d ./Core/Src/usart.o
+	-$(RM) ./Core/Src/gpio.d ./Core/Src/gpio.o ./Core/Src/i2c.d ./Core/Src/i2c.o ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/printf.d ./Core/Src/printf.o ./Core/Src/sensirion_common.d ./Core/Src/sensirion_common.o ./Core/Src/sensirion_hw_i2c_implementation.d ./Core/Src/sensirion_hw_i2c_implementation.o ./Core/Src/sht_git_version.d ./Core/Src/sht_git_version.o ./Core/Src/shtc1.d ./Core/Src/shtc1.o ./Core/Src/stm32_tm1637.d ./Core/Src/stm32_tm1637.o ./Core/Src/stm32hpmlib.d ./Core/Src/stm32hpmlib.o ./Core/Src/stm32l0xx_hal_msp.d ./Core/Src/stm32l0xx_hal_msp.o ./Core/Src/stm32l0xx_it.d ./Core/Src/stm32l0xx_it.o ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/system_stm32l0xx.d ./Core/Src/system_stm32l0xx.o ./Core/Src/usart.d ./Core/Src/usart.o
 
 .PHONY: clean-Core-2f-Src
 

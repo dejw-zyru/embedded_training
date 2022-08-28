@@ -1,24 +1,170 @@
-16:23:22 **** Incremental Build of configuration Debug for project nucleo-l476rg-tmp102-digikey ****
+15:54:59 **** Incremental Build of configuration Debug for project R-CUBE_revCubeIDE ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "nucleo-l476rg-tmp102-digikey.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Development\embedded\embedded_training\L4_forbot\nucleo-l476rg-tmp102-digikey\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="nucleo-l476rg-tmp102-digikey.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: nucleo-l476rg-tmp102-digikey.elf
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L051xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/sensirion_hw_i2c_implementation.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L051xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/sensirion_hw_i2c_implementation.d" -MT"Core/Src/sensirion_hw_i2c_implementation.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sensirion_hw_i2c_implementation.o"
+../Core/Src/sensirion_hw_i2c_implementation.c: In function 'sensirion_i2c_init':
+../Core/Src/sensirion_hw_i2c_implementation.c:59:6: warning: implicit declaration of function 'Error_Handler' [-Wimplicit-function-declaration]
+   59 |      Error_Handler();
+      |      ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "R-CUBE_revCubeIDE.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\Development\embedded\embedded_training\L4_forbot\R-CUBE_revCubeIDE\STM32L051K8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="R-CUBE_revCubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: R-CUBE_revCubeIDE.elf
  
-arm-none-eabi-size   nucleo-l476rg-tmp102-digikey.elf 
-arm-none-eabi-objdump -h -S  nucleo-l476rg-tmp102-digikey.elf  > "nucleo-l476rg-tmp102-digikey.list"
-arm-none-eabi-objcopy  -O binary  nucleo-l476rg-tmp102-digikey.elf  "nucleo-l476rg-tmp102-digikey.bin"
+arm-none-eabi-size   R-CUBE_revCubeIDE.elf 
+arm-none-eabi-objdump -h -S  R-CUBE_revCubeIDE.elf  > "R-CUBE_revCubeIDE.list"
+arm-none-eabi-objcopy  -O binary  R-CUBE_revCubeIDE.elf  "R-CUBE_revCubeIDE.bin"
    text	   data	    bss	    dec	    hex	filename
-  19988	    120	   1816	  21924	   55a4	nucleo-l476rg-tmp102-digikey.elf
+  29592	     20	   1940	  31552	   7b40	R-CUBE_revCubeIDE.elf
 Finished building: default.size.stdout
  
-Finished building: nucleo-l476rg-tmp102-digikey.bin
-Finished building: nucleo-l476rg-tmp102-digikey.list
+Finished building: R-CUBE_revCubeIDE.bin
  
+Finished building: R-CUBE_revCubeIDE.list
  
-16:23:31 **** Incremental Build of configuration Debug for project nucleo-l476rg-tmp102-digikey ****
+15:55:44 **** Incremental Build of configuration Debug for project R-CUBE_revCubeIDE ****
 make -j12 all 
-arm-none-eabi-size   nucleo-l476rg-tmp102-digikey.elf 
+arm-none-eabi-size   R-CUBE_revCubeIDE.elf 
    text	   data	    bss	    dec	    hex	filename
-  19988	    120	   1816	  21924	   55a4	nucleo-l476rg-tmp102-digikey.elf
+  29592	     20	   1940	  31552	   7b40	R-CUBE_revCubeIDE.elf
 Finished building: default.size.stdout
+ 
+15:56:00 **** Incremental Build of configuration Debug for project R-CUBE_revCubeIDE ****
+make -j12 all 
+arm-none-eabi-size   R-CUBE_revCubeIDE.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29592	     20	   1940	  31552	   7b40	R-CUBE_revCubeIDE.elf
+Finished building: default.size.stdout
+ 
+15:57:02 **** Incremental Build of configuration Debug for project R-CUBE_revCubeIDE ****
+make -j12 all 
+arm-none-eabi-size   R-CUBE_revCubeIDE.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29592	     20	   1940	  31552	   7b40	R-CUBE_revCubeIDE.elf
+Finished building: default.size.stdout
+ 
+16:03:12 **** Incremental Build of configuration Debug for project R-CUBE_revCubeIDE ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L051xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "R-CUBE_revCubeIDE.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\Development\embedded\embedded_training\L4_forbot\R-CUBE_revCubeIDE\STM32L051K8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="R-CUBE_revCubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: R-CUBE_revCubeIDE.elf
+ 
+arm-none-eabi-size   R-CUBE_revCubeIDE.elf 
+arm-none-eabi-objdump -h -S  R-CUBE_revCubeIDE.elf  > "R-CUBE_revCubeIDE.list"
+arm-none-eabi-objcopy  -O binary  R-CUBE_revCubeIDE.elf  "R-CUBE_revCubeIDE.bin"
+   text	   data	    bss	    dec	    hex	filename
+  29724	     20	   2012	  31756	   7c0c	R-CUBE_revCubeIDE.elf
+Finished building: default.size.stdout
+ 
+Finished building: R-CUBE_revCubeIDE.bin
+ 
+Finished building: R-CUBE_revCubeIDE.list
+ 
+16:14:46 **** Incremental Build of configuration Debug for project R-CUBE_revCubeIDE ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L051xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:157:1: error: expected identifier or '(' before '}' token
+  157 | }
+      | ^
+make: *** [Core/Src/subdir.mk:64: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+16:15:29 **** Incremental Build of configuration Debug for project R-CUBE_revCubeIDE ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L051xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "R-CUBE_revCubeIDE.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\Development\embedded\embedded_training\L4_forbot\R-CUBE_revCubeIDE\STM32L051K8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="R-CUBE_revCubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: R-CUBE_revCubeIDE.elf
+ 
+arm-none-eabi-size   R-CUBE_revCubeIDE.elf 
+arm-none-eabi-objdump -h -S  R-CUBE_revCubeIDE.elf  > "R-CUBE_revCubeIDE.list"
+arm-none-eabi-objcopy  -O binary  R-CUBE_revCubeIDE.elf  "R-CUBE_revCubeIDE.bin"
+   text	   data	    bss	    dec	    hex	filename
+  30524	     24	   2016	  32564	   7f34	R-CUBE_revCubeIDE.elf
+Finished building: default.size.stdout
+ 
+Finished building: R-CUBE_revCubeIDE.bin
+ 
+Finished building: R-CUBE_revCubeIDE.list
+ 
+18:29:38 **** Incremental Build of configuration Debug for project R-CUBE_revCubeIDE ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L051xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "R-CUBE_revCubeIDE.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\Development\embedded\embedded_training\L4_forbot\R-CUBE_revCubeIDE\STM32L051K8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="R-CUBE_revCubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: R-CUBE_revCubeIDE.elf
+ 
+arm-none-eabi-size   R-CUBE_revCubeIDE.elf 
+arm-none-eabi-objdump -h -S  R-CUBE_revCubeIDE.elf  > "R-CUBE_revCubeIDE.list"
+arm-none-eabi-objcopy  -O binary  R-CUBE_revCubeIDE.elf  "R-CUBE_revCubeIDE.bin"
+   text	   data	    bss	    dec	    hex	filename
+  30984	     24	   1936	  32944	   80b0	R-CUBE_revCubeIDE.elf
+Finished building: default.size.stdout
+ 
+Finished building: R-CUBE_revCubeIDE.bin
+ 
+Finished building: R-CUBE_revCubeIDE.list
+ 
+18:31:12 **** Incremental Build of configuration Debug for project R-CUBE_revCubeIDE ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L051xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "R-CUBE_revCubeIDE.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\Development\embedded\embedded_training\L4_forbot\R-CUBE_revCubeIDE\STM32L051K8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="R-CUBE_revCubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: R-CUBE_revCubeIDE.elf
+ 
+arm-none-eabi-size   R-CUBE_revCubeIDE.elf 
+arm-none-eabi-objdump -h -S  R-CUBE_revCubeIDE.elf  > "R-CUBE_revCubeIDE.list"
+arm-none-eabi-objcopy  -O binary  R-CUBE_revCubeIDE.elf  "R-CUBE_revCubeIDE.bin"
+   text	   data	    bss	    dec	    hex	filename
+  31116	     24	   2016	  33156	   8184	R-CUBE_revCubeIDE.elf
+Finished building: default.size.stdout
+ 
+Finished building: R-CUBE_revCubeIDE.bin
+ 
+Finished building: R-CUBE_revCubeIDE.list
+ 
+18:31:58 **** Incremental Build of configuration Debug for project R-CUBE_revCubeIDE ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L051xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "R-CUBE_revCubeIDE.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\Development\embedded\embedded_training\L4_forbot\R-CUBE_revCubeIDE\STM32L051K8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="R-CUBE_revCubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: R-CUBE_revCubeIDE.elf
+ 
+arm-none-eabi-size   R-CUBE_revCubeIDE.elf 
+arm-none-eabi-objdump -h -S  R-CUBE_revCubeIDE.elf  > "R-CUBE_revCubeIDE.list"
+arm-none-eabi-objcopy  -O binary  R-CUBE_revCubeIDE.elf  "R-CUBE_revCubeIDE.bin"
+   text	   data	    bss	    dec	    hex	filename
+  30524	     24	   2016	  32564	   7f34	R-CUBE_revCubeIDE.elf
+Finished building: default.size.stdout
+ 
+Finished building: R-CUBE_revCubeIDE.bin
+ 
+Finished building: R-CUBE_revCubeIDE.list
+ 
+18:53:48 **** Incremental Build of configuration Debug for project R-CUBE_revCubeIDE ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L051xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "R-CUBE_revCubeIDE.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\Development\embedded\embedded_training\L4_forbot\R-CUBE_revCubeIDE\STM32L051K8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="R-CUBE_revCubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: R-CUBE_revCubeIDE.elf
+ 
+arm-none-eabi-size   R-CUBE_revCubeIDE.elf 
+arm-none-eabi-objdump -h -S  R-CUBE_revCubeIDE.elf  > "R-CUBE_revCubeIDE.list"
+arm-none-eabi-objcopy  -O binary  R-CUBE_revCubeIDE.elf  "R-CUBE_revCubeIDE.bin"
+   text	   data	    bss	    dec	    hex	filename
+  31120	     24	   2016	  33160	   8188	R-CUBE_revCubeIDE.elf
+Finished building: default.size.stdout
+ 
+Finished building: R-CUBE_revCubeIDE.bin
+ 
+Finished building: R-CUBE_revCubeIDE.list
+ 
+18:54:33 **** Incremental Build of configuration Debug for project R-CUBE_revCubeIDE ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L051xx -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "R-CUBE_revCubeIDE.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\Development\embedded\embedded_training\L4_forbot\R-CUBE_revCubeIDE\STM32L051K8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="R-CUBE_revCubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: R-CUBE_revCubeIDE.elf
+ 
+arm-none-eabi-size   R-CUBE_revCubeIDE.elf 
+arm-none-eabi-objdump -h -S  R-CUBE_revCubeIDE.elf  > "R-CUBE_revCubeIDE.list"
+arm-none-eabi-objcopy  -O binary  R-CUBE_revCubeIDE.elf  "R-CUBE_revCubeIDE.bin"
+   text	   data	    bss	    dec	    hex	filename
+  30524	     24	   2016	  32564	   7f34	R-CUBE_revCubeIDE.elf
+Finished building: default.size.stdout
+ 
+Finished building: R-CUBE_revCubeIDE.bin
+ 
+Finished building: R-CUBE_revCubeIDE.list
  
