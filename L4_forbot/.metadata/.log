@@ -3532,3 +3532,27 @@ Reason: (4) No device found on target.
 !SUBENTRY 2 com.st.stm32cube.ide.mcu.debug.stlink 4 0 2022-08-28 15:55:48.333
 !MESSAGE Error in initializing ST-LINK device.
 Reason: (4) No device found on target.
+!SESSION 2022-11-13 17:53:59.263 -----------------------------------------------
+eclipse.buildId=Version 1.8.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pl_PL
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-11-13 17:54:23.371
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-11-13 17:54:23.599
+!MESSAGE Log4j initialized with config file D:\Development\embedded\embedded_training\L4_forbot\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-11-13 17:54:49.593
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-11-13 18:23:48.387
+!MESSAGE Indexed 'nucleo-l476-spi-eeprom' (25 sources, 84 headers) in 3.79 sec: 6,234 declarations; 39,157 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0044%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2022-11-14 00:15:40.760
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2022-11-14 00:16:23.155
+!MESSAGE Won't launch debug session since we failed to locate the binary.
