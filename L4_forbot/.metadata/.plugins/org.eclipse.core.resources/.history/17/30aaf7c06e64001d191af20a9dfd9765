@@ -128,28 +128,28 @@ int main(void)
   HAL_SPI_Receive(&hspi1, (uint8_t *)spi_buf, 1, 100);
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
 
-  // Print out status register
+  //Print out status register
   uart_buf_len = sprintf(uart_buf,
 		  	  	  	  	  "Status: 0x%02x\r\n",
 						  (unsigned int)spi_buf[0]);
   HAL_UART_Transmit(&huart2, (uint8_t *)uart_buf, uart_buf_len, 100);
 
-  // Test bytes to write to EEPROM
+  //Test bytes to write to EEPROM
   spi_buf[0] = 0xAB;
   spi_buf[1] = 0xCD;
   spi_buf[2] = 0xEF;
 
-  // Set starting address
+  //Set starting address
   addr = 0x05;
 
-  // Write 3 bytes starting at given address
+  //Write 3 bytes starting at given address
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_WRITE, 1, 100);
   HAL_SPI_Transmit(&hspi1, (uint8_t *)&addr, 1, 100);
   HAL_SPI_Transmit(&hspi1, (uint8_t *)&spi_buf, 3, 100);
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
 
-  // Test bytes to write to EEPROM
+  //Test bytes to write to EEPROM
   spi_buf[0] = 0;
   spi_buf[1] = 0;
   spi_buf[2] = 0;
@@ -157,42 +157,23 @@ int main(void)
   wip = 1;
   while (wip)
   {
-	  // Read status register
+	  //Read status register
 	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET); //sprawdzic czy rozumiem wysyłane ponizej dane
 	  HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_RDSR, 1, 100);
 	  HAL_SPI_Receive(&hspi1, (uint8_t *)spi_buf, 1, 100);
 	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
 
-	  // Mask out WIP bit
+	  //Mask out WIP bit
 	  wip = spi_buf[0] & 0b00000001;
   }
 
-  // Read the 3 bytes back
+  // Read th 3 bytes back
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_READ, 1, 100);
   HAL_SPI_Transmit(&hspi1, (uint8_t *)&addr, 1, 100);
   HAL_SPI_Receive(&hspi1, (uint8_t *)&spi_buf, 3, 100);
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
 
-  // Print out bytes read
-  uart_buf_len = sprintf(uart_buf,
-  		  	  	  	  	  "Status: 0x%02x 0x%02x 0x%02x\r\n",
-  						  (unsigned int)spi_buf[0],
-						  (unsigned int)spi_buf[1],
-						  (unsigned int)spi_buf[2]);
-  HAL_UART_Transmit(&huart2, (uint8_t *)uart_buf, uart_buf_len, 100);
-
-  // Read status register
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET); //sprawdzic czy rozumiem wysyłane ponizej dane
-  HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_RDSR, 1, 100);
-  HAL_SPI_Receive(&hspi1, (uint8_t *)spi_buf, 1, 100);
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
-
-  // Print out status register
-  uart_buf_len = sprintf(uart_buf,
-	  	  	  	  	  "Status: 0x%02x\r\n",
-					  (unsigned int)spi_buf[0]);
-  HAL_UART_Transmit(&huart2, (uint8_t *)uart_buf, uart_buf_len, 100);
 
   /* USER CODE END 2 */
 

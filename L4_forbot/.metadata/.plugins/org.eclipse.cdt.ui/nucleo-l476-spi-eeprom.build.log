@@ -1,10 +1,20 @@
-00:18:32 **** Incremental Build of configuration Debug for project nucleo-l476-spi-eeprom ****
+23:53:27 **** Incremental Build of configuration Debug for project nucleo-l476-spi-eeprom ****
 make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "nucleo-l476-spi-eeprom.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Development\embedded\embedded_training\L4_forbot\nucleo-l476-spi-eeprom\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="nucleo-l476-spi-eeprom.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: nucleo-l476-spi-eeprom.elf
+ 
 arm-none-eabi-size   nucleo-l476-spi-eeprom.elf 
+arm-none-eabi-objdump -h -S  nucleo-l476-spi-eeprom.elf  > "nucleo-l476-spi-eeprom.list"
+arm-none-eabi-objcopy  -O binary  nucleo-l476-spi-eeprom.elf  "nucleo-l476-spi-eeprom.bin"
    text	   data	    bss	    dec	    hex	filename
-  18844	    120	   1832	  20796	   513c	nucleo-l476-spi-eeprom.elf
+  19232	    120	   1832	  21184	   52c0	nucleo-l476-spi-eeprom.elf
 Finished building: default.size.stdout
  
+Finished building: nucleo-l476-spi-eeprom.bin
+ 
+Finished building: nucleo-l476-spi-eeprom.list
+ 
 
-00:18:33 Build Finished. 0 errors, 0 warnings. (took 461ms)
+23:53:32 Build Finished. 0 errors, 0 warnings. (took 4s.759ms)
 
