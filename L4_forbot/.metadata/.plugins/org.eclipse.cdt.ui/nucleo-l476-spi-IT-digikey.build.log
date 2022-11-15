@@ -1,0 +1,10 @@
+00:35:23 **** Incremental Build of configuration Debug for project nucleo-l476-spi-IT-digikey ****
+make -j12 all 
+arm-none-eabi-size   nucleo-l476-spi-IT-digikey.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22424	    120	   1832	  24376	   5f38	nucleo-l476-spi-IT-digikey.elf
+Finished building: default.size.stdout
+ 
+
+00:35:24 Build Finished. 0 errors, 0 warnings. (took 439ms)
+
