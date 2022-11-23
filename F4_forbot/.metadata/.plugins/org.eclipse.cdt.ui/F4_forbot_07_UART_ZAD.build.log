@@ -1,6 +1,0 @@
-11:51:06 **** Incremental Build of configuration Debug for project F4_forbot_07_UART_ZAD ****
-make -j4 all 
-make: Nothing to be done for 'all'.
-
-11:51:06 Build Finished (took 275ms)
-

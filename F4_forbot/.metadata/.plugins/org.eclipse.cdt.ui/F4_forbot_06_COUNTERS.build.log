@@ -1,6 +1,0 @@
-13:40:44 **** Incremental Build of configuration Debug for project F4_forbot_06_COUNTERS ****
-make -j4 all 
-make: Nothing to be done for 'all'.
-
-13:40:44 Build Finished (took 277ms)
-
