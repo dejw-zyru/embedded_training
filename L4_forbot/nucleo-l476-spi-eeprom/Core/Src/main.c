@@ -47,13 +47,18 @@ UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 
-//25AA040A instructions
-const uint8_t EEPROM_READ = 0b00000011;
-const uint8_t EEPROM_WRITE = 0b00000010;
-const uint8_t EEPROM_WRDI = 0b00000100;
-const uint8_t EEPROM_WREN = 0b00000110;
-const uint8_t EEPROM_RDSR = 0b00000101;
-const uint8_t EEPROM_WRSR = 0b00000001;
+// tests
+//#define resetWEL
+#define blockWriting
+
+//25AA040A instructions from page nr 7
+//try with 9th bit
+const uint8_t EEPROM_READ = 0b00000011; //Read data from memory array beginning at selected address
+const uint8_t EEPROM_WRITE = 0b00000010;//Write data to memory array beginning at selected address
+const uint8_t EEPROM_WRDI = 0b00000100; //Reset the write enable latch (disable write operations)
+const uint8_t EEPROM_WREN = 0b00000110; //Set the write enable latch (enable write operations)
+const uint8_t EEPROM_RDSR = 0b00000101; //Read STATUS register
+const uint8_t EEPROM_WRSR = 0b00000001; //Write STATUS register
 
 /* USER CODE END PV */
 
@@ -78,11 +83,12 @@ static void MX_SPI1_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-  char uart_buf[50];
+  char uart_buf[100]; //for printing to uart
   int uart_buf_len;
-  char spi_buf[20];
-  uint8_t addr;
-  uint8_t wip;
+  char spi_buf[20];  //send and recieve data
+  uint8_t addr, readAddr;
+  uint8_t wip; //lets check if write in process is set 1 write is process 0 is over
+  //czytamy az sie wyzeruje
 
 
 
@@ -113,48 +119,150 @@ int main(void)
   // CS pin should be default high
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
 
-  //Say something
+  //Say something proba uarta
   uart_buf_len = sprintf(uart_buf, "SPI Test\r\n");
   HAL_UART_Transmit(&huart2, (uint8_t *)uart_buf, uart_buf_len, 100);
 
   //Enable write enable latch (allow write operations)
+  //aby cokolwiek wysalc wren sent
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
-  HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_WREN, 1, 100); //(cast the data we wish to send to an 8bit unsigned integer pointer)
+  HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_WREN, 1, 100); //chcemy pisac do niego
+  //(cast the data we wish to send to an 8bit unsigned integer pointer)
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
 
+
   //Read status register
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET); //sprawdzic czy rozumiem wysyłane ponizej dane
-  HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_RDSR, 1, 100);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
+  HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_RDSR, 1, 100); //czytamy status register
   HAL_SPI_Receive(&hspi1, (uint8_t *)spi_buf, 1, 100);
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
 
-  // Print out status register
+  //odebrenie hex 0x02 -> ustawienie bitu wel a to znaczy ze write enable jest mzoliwe
+
+  // Print out status register WEL write enable latch (bit 2)
   uart_buf_len = sprintf(uart_buf,
-		  	  	  	  	  "Status: 0x%02x\r\n",
+		  	  	  	  	  "Status if WEL is set: 0x%02x\r\n",
 						  (unsigned int)spi_buf[0]);
   HAL_UART_Transmit(&huart2, (uint8_t *)uart_buf, uart_buf_len, 100);
 
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+#ifdef resetWEL
+  	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
+    HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_WRDI, 1, 100); //chcemy pisac do niego
+    //(cast the data we wish to send to an 8bit unsigned integer pointer)
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
+
+
+    //Read status register
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
+    HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_RDSR, 1, 100); //czytamy status register
+    HAL_SPI_Receive(&hspi1, (uint8_t *)spi_buf, 1, 100);
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
+
+    //odebrenie hex 0x02 -> ustawienie bitu wel a to znaczy ze write enable jest mzoliwe
+
+    // Print out status register
+    uart_buf_len = sprintf(uart_buf,
+  		  	  	  	  	  "Status if write enable latch WEL is disable (bit 2): 0x%02x\r\n",
+  						  (unsigned int)spi_buf[0]);
+    HAL_UART_Transmit(&huart2, (uint8_t *)uart_buf, uart_buf_len, 100);
+
+#endif
+
+#ifdef blockWriting
+
+    spi_buf[0] |= (1<<3);
+  	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
+    HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_WRSR, 1, 100); //chcemy pisac do niego
+    HAL_SPI_Transmit(&hspi1, (uint8_t *)spi_buf, 1, 100);
+    //(cast the data we wish to send to an 8bit unsigned integer pointer)
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
+    wip = 1; //czasami zapis troche zajmuje czasu czekamy az wip sie wyzeruje
+      while (wip)
+      {
+    	  // Read status register
+    	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET); //sprawdzic czy rozumiem wysyłane ponizej dane
+    	  HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_RDSR, 1, 100);
+    	  HAL_SPI_Receive(&hspi1, (uint8_t *)spi_buf, 1, 100);
+    	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
+
+    	  // Mask out WIP bit
+    	  wip = spi_buf[0] & 0b00000001; //LSB spi_buf[0] it should be 0 -> sprytne porownanie
+      }
+
+
+    //Read status register
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
+    HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_RDSR, 1, 100); //czytamy status register
+    HAL_SPI_Receive(&hspi1, (uint8_t *)spi_buf, 1, 100);
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
+
+    //odebrenie hex 0x02 -> ustawienie bitu wel a to znaczy ze write enable jest mzoliwe
+
+    // Print out status register
+    uart_buf_len = sprintf(uart_buf,
+  		  	  	  	  	  "block register SR: 0x%02x\r\n",
+  						  (unsigned int)spi_buf[0]);
+    HAL_UART_Transmit(&huart2, (uint8_t *)uart_buf, uart_buf_len, 100);
+
+#endif
+
+
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
+      HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_WREN, 1, 100); //chcemy pisac do niego
+      //(cast the data we wish to send to an 8bit unsigned integer pointer)
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
+
+
+      //Read status register
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
+      HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_RDSR, 1, 100); //czytamy status register
+      HAL_SPI_Receive(&hspi1, (uint8_t *)spi_buf, 1, 100);
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
+
+      //odebrenie hex 0x02 -> ustawienie bitu wel a to znaczy ze write enable jest mzoliwe
+
+      // Print out status register WEL write enable latch (bit 2)
+      uart_buf_len = sprintf(uart_buf,
+    		  	  	  	  	  "enable rewrite register: 0x%02x\r\n",
+    						  (unsigned int)spi_buf[0]);
+      HAL_UART_Transmit(&huart2, (uint8_t *)uart_buf, uart_buf_len, 100);
+
+
+
   // Test bytes to write to EEPROM
-  spi_buf[0] = 0xAB;
+  /*spi_buf[0] = 0x00;
   spi_buf[1] = 0xCD;
-  spi_buf[2] = 0xEF;
+  spi_buf[2] = 0x00;
+  spi_buf[3] = 0x69;*/
+
+    int temp=0x60;
+  for (int i = 0; i<16; i++){
+  	  spi_buf[i] = temp++;
+  	//spi_buf[i] = 0;
+    }
 
   // Set starting address
-  addr = 0x05;
+  addr = 0xFE;
+  // read address
+  readAddr = 0xFE;
 
   // Write 3 bytes starting at given address
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
-  HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_WRITE, 1, 100);
-  HAL_SPI_Transmit(&hspi1, (uint8_t *)&addr, 1, 100);
-  HAL_SPI_Transmit(&hspi1, (uint8_t *)&spi_buf, 3, 100);
+  HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_WRITE, 1, 100); //Write data to memory array beginning at selected address
+  HAL_SPI_Transmit(&hspi1, (uint8_t *)&addr, 1, 100); 	//od jakiego adresu zaczynamy pisac
+  HAL_SPI_Transmit(&hspi1, (uint8_t *)&spi_buf, 16, 100);//wyslanie 3 bajtow
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
+  // zeros read bytes
+  for (int i = 0; i<16; i++){
+	  spi_buf[i] = 0;
+  }
 
-  // Test bytes to write to EEPROM
-  spi_buf[0] = 0;
-  spi_buf[1] = 0;
-  spi_buf[2] = 0;
 
-  wip = 1;
+
+  // Wait until WIP bit is cleared
+  wip = 1; //czasami zapis troche zajmuje czasu czekamy az wip sie wyzeruje
   while (wip)
   {
 	  // Read status register
@@ -164,24 +272,30 @@ int main(void)
 	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
 
 	  // Mask out WIP bit
-	  wip = spi_buf[0] & 0b00000001;
+	  wip = spi_buf[0] & 0b00000001; //LSB spi_buf[0] it should be 0 -> sprytne porownanie
   }
 
   // Read the 3 bytes back
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
   HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_READ, 1, 100);
-  HAL_SPI_Transmit(&hspi1, (uint8_t *)&addr, 1, 100);
-  HAL_SPI_Receive(&hspi1, (uint8_t *)&spi_buf, 3, 100);
+  HAL_SPI_Transmit(&hspi1, (uint8_t *)&readAddr, 1, 100); 			//czytaj od tego aderes a pozneij go zwieksza
+  HAL_SPI_Receive(&hspi1, (uint8_t *)&spi_buf, 16, 100);
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
 
   // Print out bytes read
-  uart_buf_len = sprintf(uart_buf,
-  		  	  	  	  	  "Status: 0x%02x 0x%02x 0x%02x\r\n",
-  						  (unsigned int)spi_buf[0],
-						  (unsigned int)spi_buf[1],
-						  (unsigned int)spi_buf[2]);
-  HAL_UART_Transmit(&huart2, (uint8_t *)uart_buf, uart_buf_len, 100);
+  for (int i=0;i<16;i++){
+	  uart_buf_len = sprintf(uart_buf,
+  		  	  	  	  	  "Status read byte nr %d: 0x%02x\r\n",
+						  i,
+  						  (unsigned int)spi_buf[i]);
+	  HAL_UART_Transmit(&huart2, (uint8_t *)uart_buf, uart_buf_len, 100);
+  }
 
+
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
+    HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_WREN, 1, 100); //chcemy pisac do niego
+    //(cast the data we wish to send to an 8bit unsigned integer pointer)
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
   // Read status register
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET); //sprawdzic czy rozumiem wysyłane ponizej dane
   HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_RDSR, 1, 100);
@@ -190,9 +304,49 @@ int main(void)
 
   // Print out status register
   uart_buf_len = sprintf(uart_buf,
-	  	  	  	  	  "Status: 0x%02x\r\n",
+	  	  	  	  	  "zapis aby wylaczyc: 0x%02x\r\n",
 					  (unsigned int)spi_buf[0]);
   HAL_UART_Transmit(&huart2, (uint8_t *)uart_buf, uart_buf_len, 100);
+
+  //odczytanie 0 wel czyli do zapisu wyzerował sie poniewaz poprawnie zapisalismy do niego dane
+#ifdef blockWriting
+
+  	spi_buf[0] &= 0xF7;
+  	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
+    HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_WRSR, 1, 100); //chcemy pisac do niego
+    HAL_SPI_Transmit(&hspi1, (uint8_t *)spi_buf, 1, 100);
+    //(cast the data we wish to send to an 8bit unsigned integer pointer)
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
+    wip = 1; //czasami zapis troche zajmuje czasu czekamy az wip sie wyzeruje
+      while (wip)
+      {
+    	  // Read status register
+    	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET); //sprawdzic czy rozumiem wysyłane ponizej dane
+    	  HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_RDSR, 1, 100);
+    	  HAL_SPI_Receive(&hspi1, (uint8_t *)spi_buf, 1, 100);
+    	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
+
+    	  // Mask out WIP bit
+    	  wip = spi_buf[0] & 0b00000001; //LSB spi_buf[0] it should be 0 -> sprytne porownanie
+      }
+
+
+    //Read status register
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
+    HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_RDSR, 1, 100); //czytamy status register
+    HAL_SPI_Receive(&hspi1, (uint8_t *)spi_buf, 1, 100);
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
+
+    //odebrenie hex 0x02 -> ustawienie bitu wel a to znaczy ze write enable jest mzoliwe
+
+    // Print out status register
+    uart_buf_len = sprintf(uart_buf,
+  		  	  	  	  	  "block register SR at the end: 0x%02x\r\n",
+  						  (unsigned int)spi_buf[0]);
+    HAL_UART_Transmit(&huart2, (uint8_t *)uart_buf, uart_buf_len, 100);
+
+#endif
+
 
   /* USER CODE END 2 */
 

@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (9-2020-q2-update)
+# Toolchain: GNU Tools for STM32 (10.3-2021.10)
 ################################################################################
 
 -include ../makefile.init
@@ -43,14 +43,14 @@ BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ART
 EXECUTABLES += \
 nucleo-l476-spi-eeprom.elf \
 
+MAP_FILES += \
+nucleo-l476-spi-eeprom.map \
+
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
 nucleo-l476-spi-eeprom.list \
-
-OBJCOPY_BIN += \
-nucleo-l476-spi-eeprom.bin \
 
 
 # All Target
@@ -60,7 +60,7 @@ all: main-build
 main-build: nucleo-l476-spi-eeprom.elf secondary-outputs
 
 # Tool invocations
-nucleo-l476-spi-eeprom.elf: $(OBJS) $(USER_OBJS) D:\Development\embedded\embedded_training\L4_forbot\nucleo-l476-spi-eeprom\STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+nucleo-l476-spi-eeprom.elf nucleo-l476-spi-eeprom.map: $(OBJS) $(USER_OBJS) D:\Development\embedded\embedded_training\L4_forbot\nucleo-l476-spi-eeprom\STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	arm-none-eabi-gcc -o "nucleo-l476-spi-eeprom.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Development\embedded\embedded_training\L4_forbot\nucleo-l476-spi-eeprom\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="nucleo-l476-spi-eeprom.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
@@ -75,17 +75,12 @@ nucleo-l476-spi-eeprom.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOO
 	@echo 'Finished building: $@'
 	@echo ' '
 
-nucleo-l476-spi-eeprom.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "nucleo-l476-spi-eeprom.bin"
-	@echo 'Finished building: $@'
-	@echo ' '
-
 # Other Targets
 clean:
-	-$(RM) default.size.stdout nucleo-l476-spi-eeprom.bin nucleo-l476-spi-eeprom.elf nucleo-l476-spi-eeprom.list
+	-$(RM) default.size.stdout nucleo-l476-spi-eeprom.elf nucleo-l476-spi-eeprom.list nucleo-l476-spi-eeprom.map
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'
