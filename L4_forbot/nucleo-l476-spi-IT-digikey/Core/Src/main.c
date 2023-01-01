@@ -85,7 +85,7 @@ int main(void)
 	  char spi_buf[20];
 	  uint8_t addr;
 	  uint8_t wip;
-	  uint8_t state = 0;
+	  uint8_t state = 0; //variable witch says what state is control spi
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -132,8 +132,8 @@ int main(void)
 	        case 0:
 
 	          // First 2 bytes of buffer are instruction and address
-	          spi_buf[0] = EEPROM_WRITE;
-	          spi_buf[1] = addr;
+	          spi_buf[0] = EEPROM_WRITE; //aby zapisac
+	          spi_buf[1] = addr;		 //gdzie zapisac
 
 	          // Fill buffer with stuff to write to EEPROM
 	          for (int i = 0; i < 10; i++)
@@ -142,11 +142,13 @@ int main(void)
 	          }
 
 	          // Enable write enable latch (allow write operations)
+	          // blocking spi it is just one byte
 	          HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
 	          HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_WREN, 1, 100);
 	          HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
 
 	          // Perform non-blocking write to SPI
+	          // cs w dol i kazemy wyslac 12 bajtow
 	          HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
 	          HAL_SPI_Transmit_IT(&hspi1, (uint8_t *)spi_buf, 12);
 
@@ -156,6 +158,7 @@ int main(void)
 	          break;
 
 	        // Wait for transmit flag
+	          // w callbacku jak juz wysle sie wszystko przejdz tutaj
 	        case 1:
 
 	          if (spi_xmit_flag)
@@ -180,7 +183,7 @@ int main(void)
 	          wip = spi_buf[0] & 0b00000001;
 
 	          // If WIP is cleared, go to next state
-	          if (wip == 0)
+	          if (wip == 0) //czasami zapis troche zajmuje czasu czekamy az wip sie wyzeruje
 	          {
 	            state  += 1;
 	          }
@@ -197,6 +200,7 @@ int main(void)
 	          }
 
 	          // Read the 10 bytes back
+	          //czytanie non blocking
 	          HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
 	          HAL_SPI_Transmit(&hspi1, (uint8_t *)&EEPROM_READ, 1, 100);
 	          HAL_SPI_Transmit(&hspi1, (uint8_t *)&addr, 1, 100);
@@ -210,7 +214,7 @@ int main(void)
 	        // Wait for receive flag
 	        case 4:
 
-	          if (spi_recv_flag)
+	          if (spi_recv_flag) //czkeanie az odczyta wszystko
 	          {
 	            // Clear flag and go to next state
 	            spi_recv_flag = 0;
